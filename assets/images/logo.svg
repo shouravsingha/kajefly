@@ -1,31 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="50%" stop-color="#0ea5e9" />
-      <stop offset="100%" stop-color="#f97316" />
+    <!-- Dark Charcoal Background Gradient -->
+    <linearGradient id="charcoalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181b22" />
+      <stop offset="50%" stop-color="#111317" />
+      <stop offset="100%" stop-color="#090a0c" />
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000" flood-opacity="0.3"/>
+
+    <!-- Signal Red Gradient for the flight wing -->
+    <linearGradient id="signalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171" />
+      <stop offset="40%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+
+    <!-- Moonlit Silver Gradient for K Lettermark -->
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <!-- Glow Effect -->
+    <filter id="signalGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#ef4444" flood-opacity="0.6"/>
+    </filter>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
     </filter>
   </defs>
   
-  <!-- Background Circle / Rounded Square -->
-  <rect width="500" height="500" rx="110" fill="#0c4a6e" />
+  <!-- Base Charcoal Rounded Tile -->
+  <rect width="500" height="500" rx="120" fill="url(#charcoalGrad)" stroke="#323746" stroke-width="3" />
   
-  <!-- Stylized Wing / Flight icon behind K -->
-  <path d="M 160 360 C 220 340, 360 260, 410 120 C 330 180, 240 240, 160 360 Z" fill="url(#brandGrad)" opacity="0.85" filter="url(#shadow)" />
+  <!-- Stylized Wing / Flight swoop in Signal Red -->
+  <path d="M 150 380 C 220 350, 370 270, 420 110 C 330 180, 230 250, 150 380 Z" fill="url(#signalGrad)" filter="url(#signalGlow)" />
   
-  <!-- Modern K Lettermark -->
-  <g fill="#ffffff" filter="url(#shadow)">
+  <!-- Moonlit Silver 'K' Lettermark -->
+  <g fill="url(#silverGrad)" filter="url(#cardShadow)">
     <!-- Vertical Bar -->
-    <rect x="140" y="120" width="45" height="260" rx="22.5" />
+    <rect x="135" y="125" width="45" height="250" rx="22.5" />
     <!-- Diagonal Up Wing -->
-    <path d="M 185 245 L 290 135 C 298 127 312 127 320 135 C 328 143 328 157 320 165 L 225 265 Z" />
+    <path d="M 180 245 L 295 130 C 304 121 318 121 327 130 C 336 139 336 153 327 162 L 225 265 Z" />
     <!-- Diagonal Down Arrow -->
-    <path d="M 215 250 L 325 365 C 333 373 333 387 325 395 C 317 403 303 403 295 395 L 185 280 Z" />
+    <path d="M 215 250 L 330 365 C 339 374 339 388 330 397 C 321 406 307 406 298 397 L 180 280 Z" />
   </g>
 
-  <!-- Sparkle Accent -->
-  <circle cx="395" cy="115" r="16" fill="#fbbf24" />
+  <!-- Glowing Accent Star -->
+  <circle cx="415" cy="110" r="14" fill="#ffffff" filter="url(#signalGlow)" />
 </svg>
