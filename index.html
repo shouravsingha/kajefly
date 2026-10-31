@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="bn" dir="ltr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kajefly — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার 🚀 | AI Micro-Agency</title>
-    <meta name="description" content="Kajefly — ফিউচারিস্টিক AI ডিজিটাল এজেন্সি। F-Commerce ও লোকাল ব্র্যান্ডের সোশ্যাল মিডিয়া, কনভার্টিং ওয়েবসাইট ও ভাইরাল কন্টেন্ট সমাধান।">
+    <title>Kajefly — Autonomous AI Growth Agency for Modern Commerce</title>
+    <meta name="description" content="Kajefly is an AI-powered growth engine engineering viral social media systems, high-converting storefronts, and automated acquisition pipelines for emerging brands.">
+    <meta name="keywords" content="AI micro agency, social commerce growth, f-commerce automation, conversion storefronts, kajefly">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Kajefly — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার 🚀">
-    <meta property="og:description" content="Lavender, Chartreuse & Tomato Red Avant-Garde AI Agency for Bangladesh">
+    <meta property="og:title" content="Kajefly — Autonomous AI Growth Agency">
+    <meta property="og:description" content="Engineering viral social systems and automated customer acquisition pipelines for ambitious brands.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://shouravsingha.github.io/kajefly/">
-    
-    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,475 +21,671 @@
                 extend: {
                     colors: {
                         lavender: {
-                            50: '#faf5ff',
-                            100: '#f3e8ff',
-                            200: '#e9d5ff',
-                            300: '#d8b4fe',
-                            400: '#c084fc',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7e22ce',
-                            800: '#3b0764',
-                            900: '#1a0b2e',
-                            950: '#0d0718',
+                            50: '#f8f5fe',
+                            100: '#f0eafc',
+                            200: '#e1d5f9',
+                            300: '#cbaff5',
+                            400: '#ad82ee',
+                            500: '#8f56e4',
+                            600: '#7337d4',
+                            700: '#5a26b2',
+                            800: '#411b84',
+                            900: '#260d52',
+                            950: '#12052c',
                         },
                         chartreuse: {
-                            300: '#d9f99d',
-                            400: '#bef264',
-                            500: '#a3e635',
-                            electric: '#ccff00',
-                            glow: 'rgba(204, 255, 0, 0.35)'
+                            50: '#f7fee7',
+                            100: '#ecfccb',
+                            300: '#bef264',
+                            400: '#a3e635',
+                            500: '#84cc16',
+                            600: '#65a30d',
+                            electric: '#b6ff00',
+                            glow: 'rgba(182, 255, 0, 0.45)'
                         },
                         tomato: {
-                            400: '#ff8a75',
-                            500: '#ff6347',
-                            600: '#e0482d',
-                            700: '#c0331b',
-                            glow: 'rgba(255, 99, 71, 0.4)'
+                            50: '#fff5f3',
+                            100: '#ffe8e4',
+                            400: '#ff775e',
+                            500: '#ff4d36',
+                            600: '#ea3219',
+                            700: '#c5200b',
+                            glow: 'rgba(255, 77, 54, 0.4)'
+                        },
+                        ink: {
+                            950: '#0a0614',
+                            900: '#130c24',
+                            800: '#1d1436',
+                            700: '#2d2250',
+                            600: '#483c74',
+                            400: '#7e72a6',
+                            200: '#c6bedf',
                         }
                     },
                     fontFamily: {
-                        bangla: ['Hind Siliguri', 'sans-serif'],
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Playfair Display', 'Georgia', 'serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
                     }
                 }
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         body {
-            background-color: #0d0718;
-            color: #f3e8ff;
-            font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+            background-color: #0b0717;
+            color: #f0eafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
-        .bento-card {
-            background: linear-gradient(135deg, rgba(26, 11, 46, 0.75) 0%, rgba(18, 9, 32, 0.9) 100%);
-            border: 1px solid rgba(216, 180, 254, 0.15);
-            backdrop-filter: blur(16px);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* Architectural Grid & Ambient Glows */
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(173, 130, 238, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(173, 130, 238, 0.05) 1px, transparent 1px);
+            background-size: 64px 64px;
         }
-        .bento-card:hover {
-            border-color: rgba(204, 255, 0, 0.45);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(204, 255, 0, 0.15);
+
+        .editorial-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
         }
-        .gradient-lavender-chartreuse {
-            background: linear-gradient(120deg, #e9d5ff 20%, #ccff00 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .glass-panel {
+            background: rgba(19, 12, 36, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(225, 213, 249, 0.12);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .tomato-btn {
-            background: linear-gradient(135deg, #ff6347 0%, #e0482d 100%);
-            box-shadow: 0 0 25px rgba(255, 99, 71, 0.45);
+
+        .glass-panel:hover {
+            border-color: rgba(182, 255, 0, 0.35);
+            box-shadow: 0 20px 40px -15px rgba(182, 255, 0, 0.12);
+        }
+
+        .tomato-pill-btn {
+            background: linear-gradient(135deg, #ff4d36 0%, #ea3219 100%);
+            box-shadow: 0 10px 25px -5px rgba(255, 77, 54, 0.5);
             transition: all 0.25s ease;
         }
-        .tomato-btn:hover {
-            box-shadow: 0 0 40px rgba(255, 99, 71, 0.75);
-            transform: scale(1.02);
+
+        .tomato-pill-btn:hover {
+            box-shadow: 0 15px 35px -5px rgba(255, 77, 54, 0.8);
+            transform: translateY(-2px);
         }
-        .chartreuse-pill {
-            background: rgba(204, 255, 0, 0.1);
-            border: 1px solid rgba(204, 255, 0, 0.3);
-            color: #ccff00;
+
+        .chartreuse-telemetry {
+            background: rgba(182, 255, 0, 0.08);
+            border: 1px solid rgba(182, 255, 0, 0.25);
+            color: #b6ff00;
         }
-        .lavender-glow {
-            position: absolute;
-            filter: blur(130px);
-            pointer-events: none;
-            border-radius: 9999px;
+
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #b6ff00;
+            box-shadow: 0 0 15px rgba(182, 255, 0, 0.8);
+            cursor: pointer;
         }
     </style>
 </head>
-<body class="selection:bg-chartreuse-electric selection:text-lavender-950">
+<body class="bg-grid antialiased selection:bg-chartreuse-electric selection:text-ink-950">
 
-    <!-- Ambient Glow Orbs -->
-    <div class="lavender-glow top-0 left-1/4 w-[500px] h-[500px] bg-lavender-600/15"></div>
-    <div class="lavender-glow top-[35%] right-10 w-[450px] h-[450px] bg-tomato-500/12"></div>
-    <div class="lavender-glow bottom-40 left-10 w-[550px] h-[550px] bg-chartreuse-500/10"></div>
+    <!-- Ambient Radiance Orbs -->
+    <div class="fixed top-0 left-1/3 w-[600px] h-[600px] bg-lavender-700/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed top-1/2 -right-20 w-[500px] h-[500px] bg-tomato-600/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 left-10 w-[550px] h-[550px] bg-chartreuse-500/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
-    <!-- ============ NAVIGATION ============ -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-lavender-950/80 backdrop-blur-xl border-b border-lavender-200/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-lavender-700 via-tomato-500 to-chartreuse-electric p-[2px]">
-                    <div class="w-full h-full bg-lavender-950 rounded-[14px] flex items-center justify-center">
-                        <span class="font-black text-chartreuse-electric text-xl">K</span>
-                    </div>
+    <!-- ============ NAVIGATION BAR ============ -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-ink-950/80 backdrop-blur-xl border-b border-lavender-200/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Monogram -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-10 h-10 rounded-xl bg-ink-900 border border-lavender-300/20 flex items-center justify-center group-hover:border-chartreuse-electric transition-all duration-300">
+                    <span class="font-black text-chartreuse-electric text-lg">K</span>
                 </div>
-                <div>
-                    <span class="text-2xl font-black text-white tracking-tight">Kajefly</span>
-                    <span class="block text-[11px] font-bangla text-lavender-300 -mt-1 font-semibold">কাজেফ্লাই</span>
+                <div class="flex flex-col">
+                    <span class="font-extrabold tracking-tight text-white text-xl">Kajefly</span>
+                    <span class="text-[10px] font-mono tracking-widest text-chartreuse-electric uppercase">AUTONOMOUS GROWTH</span>
                 </div>
             </a>
 
-            <!-- Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-lavender-200">
-                <a href="#services" class="hover:text-chartreuse-electric transition">সার্ভিস</a>
-                <a href="#showcase" class="hover:text-chartreuse-electric transition">ট্রান্সফরমেশন</a>
-                <a href="#pricing" class="hover:text-chartreuse-electric transition">প্যাকেজ</a>
-                <a href="#faq" class="hover:text-chartreuse-electric transition">প্রশ্নোত্তর</a>
-                <a href="#audit" class="tomato-btn text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide">
-                    ফ্রি অডিট নিন 🎁
+            <!-- Editorial Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-lavender-200">
+                <a href="#growth-suite" class="hover:text-chartreuse-electric transition">Growth Suite</a>
+                <a href="#calculator" class="hover:text-chartreuse-electric transition">ROI Model</a>
+                <a href="#comparison" class="hover:text-chartreuse-electric transition">The Delta</a>
+                <a href="#pricing" class="hover:text-chartreuse-electric transition">Retainers</a>
+                <a href="#faq" class="hover:text-chartreuse-electric transition">Protocol</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="flex items-center gap-4">
+                <a href="#audit-intake" class="tomato-pill-btn text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-full flex items-center gap-2">
+                    <span>Audit My Brand</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- ============ HERO SECTION ============ -->
-    <section class="pt-36 pb-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+    <main>
+        <!-- ============ HERO STAGE ============ -->
+        <section class="pt-40 pb-24 lg:pt-48 lg:pb-32 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 
-                <!-- Left Headline Area -->
-                <div class="lg:col-span-7 text-center lg:text-left">
-                    <!-- High-tech Pill -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full chartreuse-pill mb-8 text-xs font-bold tracking-wider uppercase">
-                        <span class="w-2 h-2 rounded-full bg-chartreuse-electric animate-ping"></span>
-                        AI Micro-Agency for F-Commerce 2026
+                <!-- Telemetry Pill -->
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full chartreuse-telemetry text-xs font-mono font-medium mb-8">
+                    <span class="w-2 h-2 rounded-full bg-chartreuse-electric animate-pulse"></span>
+                    <span>Q4 ADAPTIVE ENGINE DEPLOYED • BD & GLOBAL F-COMMERCE</span>
+                </div>
+
+                <!-- Headline & Editorial Hook -->
+                <div class="grid lg:grid-cols-12 gap-12 items-end mb-16">
+                    <div class="lg:col-span-8">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]">
+                            We engineer <span class="editorial-title font-normal text-lavender-200">hyper-speed</span> growth pipelines for ambitious brands.
+                        </h1>
                     </div>
+                    <div class="lg:col-span-4 lg:pb-2">
+                        <p class="text-base text-lavender-200/80 leading-relaxed">
+                            Replace fragmented agencies with an autonomous growth engine. From viral video scripts to instant-checkout storefronts, Kajefly transforms overlooked brands into category leaders.
+                        </p>
+                        <div class="mt-6 flex items-center gap-4">
+                            <a href="#audit-intake" class="tomato-pill-btn text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full inline-flex items-center gap-2">
+                                Request 24h Free Audit
+                            </a>
+                            <a href="#growth-suite" class="text-xs font-bold uppercase tracking-wider text-lavender-300 hover:text-white underline underline-offset-8 transition">
+                                Explore Architecture ↓
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] mb-6">
-                        ছোট ব্র্যান্ডের<br>
-                        <span class="gradient-lavender-chartreuse">সুপার-গ্রোথ পার্টনার!</span>
-                    </h1>
+                <!-- Live System Metric Tickers -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 border-t border-lavender-200/10">
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <div class="text-xs font-mono uppercase text-lavender-400 mb-1">Average Organic Lift</div>
+                        <div class="text-3xl font-extrabold text-chartreuse-electric tracking-tight">+340%</div>
+                        <div class="text-xs text-lavender-300 mt-2">Measured over 90-day cycles</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <div class="text-xs font-mono uppercase text-lavender-400 mb-1">Storefront Load Time</div>
+                        <div class="text-3xl font-extrabold text-white tracking-tight">&lt; 0.7s</div>
+                        <div class="text-xs text-lavender-300 mt-2">1-Click bKash / COD Conversion</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <div class="text-xs font-mono uppercase text-lavender-400 mb-1">Asset Production Velocity</div>
+                        <div class="text-3xl font-extrabold text-tomato-500 tracking-tight">4x Faster</div>
+                        <div class="text-xs text-lavender-300 mt-2">AI-assisted visual pipelines</div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <div class="text-xs font-mono uppercase text-lavender-400 mb-1">Audited Retention Rate</div>
+                        <div class="text-3xl font-extrabold text-white tracking-tight">94.8%</div>
+                        <div class="text-xs text-lavender-300 mt-2">Client partnership renewal</div>
+                    </div>
+                </div>
 
-                    <p class="text-lg sm:text-xl text-lavender-200/80 font-bangla max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-normal">
-                        আপনার Facebook পেজের দুর্বল এনগেজমেন্ট ও সেলস ড্রপ দূর করতে Kajefly এনেছে AI-ড্রিভেন কন্টেন্ট ক্যালেন্ডার, ভাইরাল রিলস এবং ১-ক্লিক অর্ডার ওয়েবসাইট।
+            </div>
+        </section>
+
+        <!-- ============ INTERACTIVE GROWTH SUITE (FEATURE SHOWCASE) ============ -->
+        <section id="growth-suite" class="py-24 bg-ink-900/40 border-y border-lavender-200/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-chartreuse-electric">Modular Capabilities</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">The Kajefly Growth Suite</h2>
+                    </div>
+                    <p class="text-sm text-lavender-300 max-w-md">
+                        Four synchronized operational pillars designed to replace expensive, scattered freelancers with a unified execution powerhouse.
                     </p>
+                </div>
 
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#audit" class="tomato-btn text-white px-8 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2">
-                            <span>২৪ ঘণ্টার ফ্রি পেজ অডিট</span>
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <!-- 4 High-Trust Feature Blocks -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Feature 01 -->
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="text-xs font-mono px-3 py-1.5 rounded-full chartreuse-telemetry">PILLAR 01</span>
+                            <i data-lucide="sparkles" class="w-6 h-6 text-chartreuse-electric"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Algorithmic Content Engine</h3>
+                        <p class="text-sm text-lavender-200/80 leading-relaxed mb-6">
+                            Eliminate content drought permanently. We engineer 30-day scheduled content calendars complete with psychological hooks, native Bengali/English copy, and curated Reels storyboards engineered for algorithmic virality.
+                        </p>
+                        <div class="space-y-2 pt-6 border-t border-lavender-200/10 text-xs font-mono text-lavender-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> 15 to 30 custom visual posts per month</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Trend-jacked short-form video scripts</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Metricool & Buffer automated publishing</div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 02 -->
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-tomato-500/10 text-tomato-400 border border-tomato-500/30">PILLAR 02</span>
+                            <i data-lucide="zap" class="w-6 h-6 text-tomato-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Instant-Checkout Storefronts</h3>
+                        <p class="text-sm text-lavender-200/80 leading-relaxed mb-6">
+                            Stop losing 60% of potential buyers in messy inbox threads. We deploy ultra-fast mobile landing pages that allow customers to select variants and place bKash/COD orders in under 30 seconds.
+                        </p>
+                        <div class="space-y-2 pt-6 border-t border-lavender-200/10 text-xs font-mono text-lavender-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-tomato-500"></i> Zero server overhead (GitHub Pages / Vercel)</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-tomato-500"></i> Automated order forwarding directly to WhatsApp/Sheets</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-tomato-500"></i> Frictionless single-page mobile layout</div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 03 -->
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="text-xs font-mono px-3 py-1.5 rounded-full chartreuse-telemetry">PILLAR 03</span>
+                            <i data-lucide="bar-chart-2" class="w-6 h-6 text-chartreuse-electric"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Precision Meta Performance</h3>
+                        <p class="text-sm text-lavender-200/80 leading-relaxed mb-6">
+                            Stop burning money on generic boosted posts. We build high-converting lookalike funnels, configure Meta Conversions API (CAPI), and deploy aggressive retargeting campaigns that drive predictable ROAS.
+                        </p>
+                        <div class="space-y-2 pt-6 border-t border-lavender-200/10 text-xs font-mono text-lavender-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Laser-targeted interest & behavioral audiences</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Dynamic A/B testing on creatives and hooks</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Real-time cost-per-acquisition (CPA) optimization</div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 04 -->
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="text-xs font-mono px-3 py-1.5 rounded-full bg-lavender-500/10 text-lavender-300 border border-lavender-400/30">PILLAR 04</span>
+                            <i data-lucide="shield-check" class="w-6 h-6 text-lavender-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Executive Intelligence & Audits</h3>
+                        <p class="text-sm text-lavender-200/80 leading-relaxed mb-6">
+                            Full transparency with weekly executive briefings. Monitor your cost per lead, audience retention, and revenue attribution with zero vanity metrics and clear actionable growth steps.
+                        </p>
+                        <div class="space-y-2 pt-6 border-t border-lavender-200/10 text-xs font-mono text-lavender-300">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Bi-weekly strategic video audits</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Competitor positioning analysis</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Direct WhatsApp VIP access to campaign leads</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ INTERACTIVE ROI MODEL (CALCULATOR) ============ -->
+        <section id="calculator" class="py-24 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-mono uppercase tracking-widest text-chartreuse-electric">Forecasting Engine</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Estimate Your Growth Potential</h2>
+                    <p class="text-sm text-lavender-300 mt-3">
+                        Adjust your current monthly orders to calculate projected uplift with Kajefly's unified pipeline.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border-lavender-300/20">
+                    <div class="mb-10">
+                        <div class="flex justify-between items-center mb-4">
+                            <label for="orderSlider" class="text-sm font-bold uppercase tracking-wider text-lavender-200">
+                                Current Monthly Orders:
+                            </label>
+                            <span id="orderValue" class="text-2xl font-black text-chartreuse-electric font-mono">150</span>
+                        </div>
+                        <input id="orderSlider" type="range" min="30" max="1000" step="10" value="150" class="w-full h-2 bg-ink-950 rounded-lg appearance-none cursor-pointer custom-slider border border-lavender-200/20">
+                        <div class="flex justify-between text-[11px] font-mono text-lavender-400 mt-2">
+                            <span>30 orders/mo (Emerging)</span>
+                            <span>500 orders/mo</span>
+                            <span>1,000+ orders/mo (Scaling)</span>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-3 gap-6 pt-8 border-t border-lavender-200/10">
+                        <div class="p-4 rounded-xl bg-ink-950/60 border border-lavender-200/10">
+                            <div class="text-xs text-lavender-400 font-mono">PROJECTED ORDERS</div>
+                            <div id="projectedOrders" class="text-3xl font-extrabold text-white mt-1">420</div>
+                            <div class="text-[11px] text-chartreuse-electric font-mono mt-1">+180% via 1-click checkout</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-ink-950/60 border border-lavender-200/10">
+                            <div class="text-xs text-lavender-400 font-mono">ESTIMATED REVENUE LIFT</div>
+                            <div id="revenueLift" class="text-3xl font-extrabold text-chartreuse-electric mt-1">৳ 2,43,000</div>
+                            <div class="text-[11px] text-lavender-300 font-mono mt-1">Avg ৳900 order value</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-ink-950/60 border border-lavender-200/10">
+                            <div class="text-xs text-lavender-400 font-mono">ESTIMATED ROI</div>
+                            <div class="text-3xl font-extrabold text-tomato-500 mt-1">12.4x</div>
+                            <div class="text-[11px] text-lavender-300 font-mono mt-1">On Growth Engine retainer</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <a href="#audit-intake" class="tomato-pill-btn text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full inline-flex items-center gap-2">
+                            <span>Lock In Your Custom Roadmap</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
-                        <a href="#services" class="px-8 py-4 rounded-2xl font-bold text-base text-lavender-200 bento-card flex items-center justify-center gap-2 hover:text-chartreuse-electric">
-                            <span>সার্ভিস এক্সপ্লোর করুন</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BEFORE VS AFTER TRANSFORMATION ============ -->
+        <section id="comparison" class="py-24 bg-ink-900/60 border-y border-lavender-200/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-mono uppercase tracking-widest text-tomato-500">The Transformation Delta</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Why Conventional Pages Stall</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Stalled Page -->
+                    <div class="p-8 sm:p-10 rounded-3xl bg-ink-950/80 border border-tomato-500/30 relative">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-full bg-tomato-500/20 text-tomato-500 flex items-center justify-center font-bold text-sm">✕</div>
+                            <h3 class="text-xl font-bold text-white">The Stalled Boutique Page</h3>
+                        </div>
+                        <ul class="space-y-5 text-sm text-lavender-200/70">
+                            <li class="flex items-start gap-3">
+                                <span class="text-tomato-500 font-bold">•</span>
+                                <span><strong>Cluttered messaging:</strong> Inconsistent typography and lack of signature brand colors lead to instant bounce.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-tomato-500 font-bold">•</span>
+                                <span><strong>Messenger friction:</strong> Requiring customers to DM "Price please?" causes 55%+ order abandonment.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-tomato-500 font-bold">•</span>
+                                <span><strong>Boost button trap:</strong> Wasting ৳10k-20k/mo on un-targeted boosts with zero pixel tracking or retargeting.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Kajefly Calibrated Brand -->
+                    <div class="p-8 sm:p-10 rounded-3xl glass-panel border-chartreuse-electric/50 shadow-[0_0_35px_rgba(182,255,0,0.12)] relative">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-full bg-chartreuse-electric/20 text-chartreuse-electric flex items-center justify-center font-bold text-sm">✓</div>
+                            <h3 class="text-xl font-bold text-white">The Kajefly Category Leader</h3>
+                        </div>
+                        <ul class="space-y-5 text-sm text-lavender-100">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-1 flex-shrink-0"></i>
+                                <span><strong>Avant-Garde Positioning:</strong> Signature brand system with high-trust aesthetic immediately commanding premium pricing.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-1 flex-shrink-0"></i>
+                                <span><strong>Frictionless Commerce:</strong> Sub-second storefront checkout with integrated bKash & courier tracking.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-1 flex-shrink-0"></i>
+                                <span><strong>Data-Backed Retargeting:</strong> Continuous CAPI event tracking delivering steady, proven 4x-8x ROAS.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TRANSPARENT PRICING RETAINERS ============ -->
+        <section id="pricing" class="py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-mono uppercase tracking-widest text-chartreuse-electric">Predictable Investment</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Transparent Monthly Retainers</h2>
+                    <p class="text-sm text-lavender-300 mt-3">Cancel anytime. No lock-ins. Every tier is engineered for immediate measurable ROI.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+                    
+                    <!-- Tier 1 -->
+                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono uppercase tracking-widest text-lavender-400">STARTER ACCELERATOR</div>
+                            <div class="mt-4 flex items-baseline">
+                                <span class="text-4xl font-black text-white">৳ 5,000</span>
+                                <span class="text-xs text-lavender-400 font-mono ml-2">/ month</span>
+                            </div>
+                            <p class="text-xs text-lavender-300 mt-2">For emerging pages looking to establish consistent authority.</p>
+                            
+                            <div class="my-6 border-t border-lavender-200/10"></div>
+                            
+                            <ul class="space-y-3 text-xs text-lavender-200 font-mono">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> 8 branded high-converting posts</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Copywriting, hooks & hashtag system</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Metricool auto-scheduling</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Monthly growth metrics report</li>
+                            </ul>
+                        </div>
+                        <a href="#audit-intake" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-ink-950 hover:bg-ink-800 text-white border border-lavender-300/20 transition">
+                            Select Starter Plan
                         </a>
                     </div>
 
-                    <!-- Highlight Chips -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-12 pt-8 border-t border-lavender-200/10">
-                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-chartreuse-electric"></i> ০ টাকা প্রাথমিক সেটআপ
+                    <!-- Tier 2 (Highlighted) -->
+                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border-chartreuse-electric relative shadow-[0_0_40px_rgba(182,255,0,0.18)]">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-chartreuse-electric text-ink-950 text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full">
+                            MOST POPULAR CHOICE
                         </div>
-                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-chartreuse-electric"></i> অর্গানিক রিচ বৃদ্ধি
-                        </div>
-                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-tomato-500"></i> ১০০% ROI ফোকাসড
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Visual: Futuristic Interactive Glass Deck -->
-                <div class="lg:col-span-5">
-                    <div class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden border-lavender-300/20">
-                        <div class="flex items-center justify-between pb-6 mb-6 border-b border-lavender-200/10">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-tomato-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-chartreuse-electric"></span>
-                                <span class="w-3 h-3 rounded-full bg-lavender-400"></span>
+                        <div>
+                            <div class="text-xs font-mono uppercase tracking-widest text-chartreuse-electric">GROWTH ENGINE</div>
+                            <div class="mt-4 flex items-baseline">
+                                <span class="text-4xl font-black text-white">৳ 10,000</span>
+                                <span class="text-xs text-lavender-400 font-mono ml-2">/ month</span>
                             </div>
-                            <span class="text-xs font-mono font-bold text-chartreuse-electric uppercase tracking-widest">● LIVE ANALYTICS</span>
+                            <p class="text-xs text-lavender-300 mt-2">Complete full-funnel dominance for active commercial brands.</p>
+                            
+                            <div class="my-6 border-t border-lavender-200/10"></div>
+                            
+                            <ul class="space-y-3 text-xs text-lavender-100 font-mono">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> 15 premium brand & product creatives</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> 2 viral short-form Reels scripts & storyboards</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> <strong>Complete mobile 1-click order storefront</strong></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Competitor audit & audience retargeting roadmap</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Bi-weekly strategy consultations</li>
+                            </ul>
                         </div>
+                        <a href="#audit-intake" class="mt-8 block text-center py-4 rounded-xl font-bold text-xs uppercase tracking-wider tomato-pill-btn text-white transition">
+                            Launch Growth Engine →
+                        </a>
+                    </div>
 
-                        <!-- Stat Box 1 -->
-                        <div class="bg-lavender-900/50 p-4 rounded-2xl border border-lavender-200/10 mb-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-lavender-300 font-semibold uppercase">অর্গানিক পেজ রিচ</span>
-                                <span class="text-xs font-black text-chartreuse-electric bg-chartreuse-electric/10 px-2 py-0.5 rounded-full">+৩৪০%</span>
+                    <!-- Tier 3 -->
+                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono uppercase tracking-widest text-lavender-400">ENTERPRISE SCALE</div>
+                            <div class="mt-4 flex items-baseline">
+                                <span class="text-4xl font-black text-white">৳ 20,000</span>
+                                <span class="text-xs text-lavender-400 font-mono ml-2">/ month</span>
                             </div>
-                            <div class="text-2xl font-black text-white mt-2">৭২,৫০০+ ভিউস</div>
-                            <div class="w-full bg-lavender-950 h-2 rounded-full mt-3 overflow-hidden">
-                                <div class="bg-gradient-to-r from-tomato-500 to-chartreuse-electric h-full w-[85%] rounded-full"></div>
-                            </div>
+                            <p class="text-xs text-lavender-300 mt-2">Dedicated autonomous marketing team for high-volume retailers.</p>
+                            
+                            <div class="my-6 border-t border-lavender-200/10"></div>
+                            
+                            <ul class="space-y-3 text-xs text-lavender-200 font-mono">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Unlimited creative & copywriting throughput</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Complete Meta Ads management & CAPI tracking</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> Custom multi-page e-commerce setup</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> 24/7 dedicated account manager on WhatsApp</li>
+                            </ul>
                         </div>
+                        <a href="#audit-intake" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-ink-950 hover:bg-ink-800 text-white border border-lavender-300/20 transition">
+                            Talk to Founders
+                        </a>
+                    </div>
 
-                        <!-- Stat Box 2 -->
-                        <div class="bg-lavender-900/50 p-4 rounded-2xl border border-lavender-200/10 mb-6">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-lavender-300 font-semibold uppercase">কনভার্সন ও সেলস</span>
-                                <span class="text-xs font-black text-tomato-500 bg-tomato-500/10 px-2 py-0.5 rounded-full">2.8x Growth</span>
-                            </div>
-                            <div class="text-2xl font-black text-white mt-2">৳২,৮০,০০০+</div>
-                            <p class="text-xs font-bangla text-lavender-400 mt-1">ওয়েবসাইট ও কাস্টম মেসেঞ্জার ফানেল থেকে</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ INTERACTIVE FAQ ACCORDION ============ -->
+        <section id="faq" class="py-24 bg-ink-900/40 border-t border-lavender-200/10">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-mono uppercase tracking-widest text-chartreuse-electric">Operational Protocol</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden">
+                        <button class="w-full p-6 text-left flex justify-between items-center text-sm font-bold text-white faq-toggle">
+                            <span>How quickly will I receive my first deliverables?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-chartreuse-electric transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-xs text-lavender-300 leading-relaxed hidden faq-answer">
+                            Within 72 hours of onboarding, your full 30-day content calendar and initial creative designs will be delivered for review. Storefront deployments typically take 4-5 business days.
                         </div>
+                    </div>
 
-                        <!-- Testimonial Mini Pill -->
-                        <div class="p-3 bg-chartreuse-electric/10 rounded-xl border border-chartreuse-electric/20 flex items-center gap-3">
-                            <span class="text-2xl">🔥</span>
-                            <div class="text-xs font-bangla text-chartreuse-300">
-                                <strong>StyleBD এর রিভিউ:</strong> "Kajefly-র রিলস স্ক্রিপ্ট ও পোস্টের পর ইনবক্স অর্ডারে বন্যা বয়ে গেছে!"
-                            </div>
+                    <!-- FAQ 2 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden">
+                        <button class="w-full p-6 text-left flex justify-between items-center text-sm font-bold text-white faq-toggle">
+                            <span>Do I need to hand over my Facebook password?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-chartreuse-electric transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-xs text-lavender-300 leading-relaxed hidden faq-answer">
+                            Never. We operate via official Meta Business Manager partner invites or agency scheduling tools (such as Metricool). Your passwords and billing accounts remain 100% under your private control.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden">
+                        <button class="w-full p-6 text-left flex justify-between items-center text-sm font-bold text-white faq-toggle">
+                            <span>What makes Kajefly different from traditional marketing agencies?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-chartreuse-electric transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 text-xs text-lavender-300 leading-relaxed hidden faq-answer">
+                            Traditional agencies charge ৳40k+ with bloated account manager overheads and slow turnaround times. Kajefly utilizes automated AI production pipelines to deliver superior creative quality at one-fourth the market cost.
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============ BEFORE VS AFTER TRANSFORMATION ============ -->
-    <section id="showcase" class="py-24 bg-lavender-950/70 border-y border-lavender-200/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-tomato-500 font-bold text-xs uppercase tracking-widest">Real Results</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
-                    সাধারণ পেজ vs <span class="text-chartreuse-electric">Kajefly ট্রান্সফরমেশন</span>
-                </h2>
-                <p class="text-lavender-300 font-bangla text-base">কেন সাধারণ বুস্টিংয়ের চেয়ে প্রফেশনাল ব্র্যান্ডিং ও কন্টেন্ট বেশি সেল এনে দেয়?</p>
-            </div>
+        <!-- ============ AUDIT INTAKE FORM ============ -->
+        <section id="audit-intake" class="py-24 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative z-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-tomato-500">Zero-Risk Protocol</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Claim Your Free 24h Brand Audit</h2>
+                <p class="text-sm text-lavender-300 mb-10 max-w-lg mx-auto">
+                    We will analyze your social page, design 1 complimentary custom redesign mockup, and identify your top 3 growth bottlenecks. No sales calls. No obligations.
+                </p>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Bad/Standard Approach -->
-                <div class="p-8 rounded-3xl bg-lavender-900/20 border border-tomato-500/30">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-tomato-500/20 text-tomato-500 flex items-center justify-center font-bold">✕</span>
-                        <h3 class="text-xl font-bold text-white">সাধারণ অপেশাদার পেজ</h3>
-                    </div>
-                    <ul class="space-y-4 text-sm text-lavender-300 font-bangla">
-                        <li class="flex items-start gap-3">
-                            <span class="text-tomato-500 mt-0.5">•</span>
-                            <span>ক্লিয়ার ব্র্যান্ড কালার বা ফন্ট নেই, সোশ্যাল মিডিয়া এলোমেলো দেখায়</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-tomato-500 mt-0.5">•</span>
-                            <span>বোরিং ক্যাপশন ও হুক — কাস্টমার পোস্ট স্ক্রোল করে চলে যায়</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-tomato-500 mt-0.5">•</span>
-                            <span>ওয়েবসাইট নেই, ইনবক্সে দাম জিজ্ঞেস করতে করতে কাস্টমার হতাশ হয়</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Kajefly Solution -->
-                <div class="p-8 rounded-3xl bento-card border-chartreuse-electric/50 shadow-[0_0_30px_rgba(204,255,0,0.1)]">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-chartreuse-electric/20 text-chartreuse-electric flex items-center justify-center font-bold">✓</span>
-                        <h3 class="text-xl font-bold text-white">Kajefly সুপার-ব্র্যান্ড</h3>
-                    </div>
-                    <ul class="space-y-4 text-sm text-lavender-200 font-bangla">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
-                            <span>মডার্ন ল্যাভেন্ডার ও হাই-কন্ট্রাস্ট কালার দিয়ে প্রিমিয়াম ব্র্যান্ড লুক</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
-                            <span>AI-ড্রিভেন আকর্ষণীয় বাংলা হুক ও ভাইরাল রিলস স্ক্রিপ্ট</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
-                            <span>ফ্রি ১-ক্লিক মোবাইল ওয়েবসাইট — কাস্টমার নিজেই অর্ডার প্লেস করে</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ BENTO GRID SERVICES ============ -->
-    <section id="services" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-chartreuse-electric font-bold text-xs uppercase tracking-widest">Our Superpowers</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
-                    ৩টি শক্তিশালী সার্ভিস, <span class="text-tomato-500">১টি প্ল্যাটফর্মে</span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Bento 1 -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
+                <form class="glass-panel p-8 sm:p-10 rounded-3xl text-left space-y-5 border-lavender-300/20">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-lavender-800/80 border border-lavender-400/20 flex items-center justify-center text-chartreuse-electric mb-6">
-                            <i data-lucide="calendar" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">৩০ দিনের সোশ্যাল ম্যানেজমেন্ট</h3>
-                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
-                            প্রতিদিন কী পোস্ট করবেন তা নিয়ে ভাবার দিন শেষ। আমরা ৩০ দিনের পুরো ক্যালেন্ডার, বাংলা ক্যাপশন ও হ্যাশট্যাগ রেডি করে অটো-শিডিউল করে দেবো।
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-chartreuse-electric">
-                        + অর্গানিক এনগেজমেন্ট বৃদ্ধি
-                    </div>
-                </div>
-
-                <!-- Bento 2 -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between border-tomato-500/30">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-tomato-500/20 border border-tomato-500/30 flex items-center justify-center text-tomato-500 mb-6">
-                            <i data-lucide="globe" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">ফাস্ট-অর্ডার ল্যান্ডিং ওয়েবসাইট</h3>
-                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
-                            কাস্টমার ইনবক্সে এসে দাম না চেয়ে সরাসরি ওয়েবসাইটে গিয়ে ছবি ও সাইজ দেখে এক ক্লিকে বিকাশ অথবা ক্যাশ অন ডেলিভারিতে অর্ডার কনফার্ম করবে।
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-tomato-500">
-                        + ড্রপ-অফ কমানো ও অটোমেটেড সেলস
-                    </div>
-                </div>
-
-                <!-- Bento 3 -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-lavender-800/80 border border-lavender-400/20 flex items-center justify-center text-lavender-300 mb-6">
-                            <i data-lucide="video" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">ভাইরাল রিলস ও অ্যাড কপি</h3>
-                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
-                            অ্যালগরিদমের ফেভারিট শর্ট-ফর্ম ভিডিও স্ক্রিপ্ট এবং ফেসবুক অ্যাডের জন্য হাই-কনভার্টিং কপিরাইটিং যাতে বিজ্ঞাপনের প্রতি টাকার সর্বোচ্চ রিটার্ন আসে।
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-chartreuse-electric">
-                        + কম খরচে বেশি মেসেজ ও সেলস
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ PRICING ============ -->
-    <section id="pricing" class="py-24 bg-lavender-950/60 border-t border-lavender-200/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-chartreuse-electric font-bold text-xs uppercase tracking-widest">Transparent Packages</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
-                    সহজ ও <span class="gradient-lavender-chartreuse">সাশ্রয়ী প্যাকেজ</span>
-                </h2>
-                <p class="text-lavender-300 font-bangla text-base">এককালীন অথবা মাসিক—আপনার পছন্দমতো শুরু করুন।</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
-                <!-- Starter -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-xs font-bold text-lavender-400 uppercase tracking-widest">Starter Pack</div>
-                        <div class="mt-4 flex items-baseline">
-                            <span class="text-4xl font-black text-white">৳৫,০০০</span>
-                            <span class="text-lavender-400 text-sm ml-2 font-bangla">/মাস</span>
-                        </div>
-                        <div class="my-6 border-t border-lavender-200/10"></div>
-                        <ul class="space-y-3 text-sm text-lavender-300 font-bangla">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> মাসে ৮টি গ্রাফিক্স পোস্ট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কন্টেন্ট ক্যালেন্ডার ও ক্যাপশন</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> অটো-পোস্টিং শিডিউল</li>
-                        </ul>
-                    </div>
-                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-lavender-900 hover:bg-lavender-800 text-white border border-lavender-300/20 transition">
-                        স্টার্টার বুক করুন
-                    </a>
-                </div>
-
-                <!-- Growth (Best Seller) -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between border-chartreuse-electric relative shadow-[0_0_35px_rgba(204,255,0,0.15)]">
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-chartreuse-electric text-lavender-950 text-[11px] font-black uppercase px-4 py-1 rounded-full tracking-wider">
-                        Best Value 🔥
+                        <label class="block text-xs font-mono uppercase text-lavender-400 mb-2">Your Name / Title</label>
+                        <input type="text" required placeholder="e.g. Shourav Singha, Founder" class="w-full bg-ink-950 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                     </div>
                     <div>
-                        <div class="text-xs font-bold text-chartreuse-electric uppercase tracking-widest">Growth Engine</div>
-                        <div class="mt-4 flex items-baseline">
-                            <span class="text-4xl font-black text-white">৳১০,০০০</span>
-                            <span class="text-lavender-400 text-sm ml-2 font-bangla">/মাস</span>
-                        </div>
-                        <div class="my-6 border-t border-lavender-200/10"></div>
-                        <ul class="space-y-3 text-sm text-lavender-200 font-bangla">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> মাসে ১৫টি প্রিমিয়াম পোস্ট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ২টি ভাইরাল রিলস স্ক্রিপ্ট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ১টি রেডিমেড সেলস ওয়েবসাইট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কম্পিটিটর অডিট ও রিপোর্ট</li>
-                        </ul>
+                        <label class="block text-xs font-mono uppercase text-lavender-400 mb-2">Brand / Facebook / Instagram URL</label>
+                        <input type="text" required placeholder="facebook.com/yourbrand" class="w-full bg-ink-950 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                     </div>
-                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm tomato-btn text-white transition">
-                        গ্রোথ প্যাক শুরু করুন →
-                    </a>
-                </div>
-
-                <!-- Web + Brand Bundle -->
-                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-bold text-lavender-400 uppercase tracking-widest">Web + Brand Bundle</div>
-                        <div class="mt-4 flex items-baseline">
-                            <span class="text-4xl font-black text-white">৳১২,৫০০</span>
-                            <span class="text-lavender-400 text-sm ml-2 font-bangla">এককালীন</span>
-                        </div>
-                        <div class="my-6 border-t border-lavender-200/10"></div>
-                        <ul class="space-y-3 text-sm text-lavender-300 font-bangla">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কমপ্লিট কাস্টম ওয়েবসাইট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ব্র্যান্ড লোগো ও সোশ্যাল কিট</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ফ্রি হোস্টিং ও ডোমেন কানেকশন</li>
-                        </ul>
+                        <label class="block text-xs font-mono uppercase text-lavender-400 mb-2">WhatsApp or Email for Audit Delivery</label>
+                        <input type="text" required placeholder="017XXXXXXXX or you@brand.com" class="w-full bg-ink-950 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                     </div>
-                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-lavender-900 hover:bg-lavender-800 text-white border border-lavender-300/20 transition">
-                        বান্ডেল সিলেক্ট করুন
-                    </a>
-                </div>
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-lavender-400 mb-2">Primary Goal</label>
+                        <select class="w-full bg-ink-950 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-chartreuse-electric text-sm">
+                            <option>Revamp Social Media Content & Reels</option>
+                            <option>Deploy Fast 1-Click Order Storefront</option>
+                            <option>Fix Paid Meta Ad ROAS</option>
+                            <option>Full Agency Growth Partnership</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full tomato-pill-btn text-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition">
+                        Dispatch Audit Request 🚀
+                    </button>
+                    <p class="text-center text-[11px] font-mono text-lavender-400">
+                        🔒 Confidential. Completed by our senior strategists within 24 hours.
+                    </p>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- ============ FREE AUDIT SECTION ============ -->
-    <section id="audit" class="py-24 relative overflow-hidden">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full chartreuse-pill mb-4 text-xs font-bold uppercase">
-                Free Value Offer 🎁
+    <!-- ============ EDITORIAL FOOTER ============ -->
+    <footer class="py-12 bg-ink-950 border-t border-lavender-200/10 text-xs text-lavender-400">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg bg-ink-900 border border-lavender-300/20 flex items-center justify-center">
+                    <span class="font-black text-chartreuse-electric text-xs">K</span>
+                </div>
+                <span class="text-white font-bold tracking-tight">Kajefly Autonomous Agency</span>
+                <span class="text-chartreuse-electric font-mono text-[10px]">v2.6 DEPLOYED</span>
             </div>
-            <h2 class="text-3xl sm:text-5xl font-black text-white mb-6">
-                আপনার পেজের জন্য <span class="text-tomato-500">ফ্রি অডিট নিন</span>
-            </h2>
-            <p class="text-lavender-300 font-bangla text-base mb-10">
-                নিচে আপনার তথ্য দিন। আমরা আপনাদের ব্র্যান্ডের জন্য একটি কাস্টম 'Before vs After' ডেমো পোস্ট এবং পেজ অপ্টিমাইজেশন প্ল্যান তৈরি করে দেবো।
-            </p>
-
-            <form class="bento-card p-8 rounded-3xl text-left space-y-5 border-lavender-300/30">
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">আপনার নাম</label>
-                    <input type="text" placeholder="যেমন: সৌরভ সিংহ" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">Facebook / Instagram পেজ লিঙ্ক</label>
-                    <input type="text" placeholder="facebook.com/yourpage" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">WhatsApp নম্বর</label>
-                    <input type="tel" placeholder="01XXXXXXXXX" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
-                </div>
-                <button type="submit" class="w-full tomato-btn text-white py-4 rounded-xl font-bold text-base transition">
-                    ফ্রি অডিট রিপোর্ট রিকোয়েস্ট করুন 🚀
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class="py-12 bg-lavender-950 border-t border-lavender-200/10 text-xs text-lavender-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-chartreuse-electric"></span>
-                <span class="text-white font-bold">Kajefly</span> — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার
-            </div>
-            <div>
-                © 2026 Kajefly Agency • Palette: Lavender, Chartreuse & Tomato Red.
+            <div class="font-mono text-[11px]">
+                Built with Lavender, Electric Chartreuse & Tomato Red. All rights reserved © 2026.
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Script logic -->
     <script>
         lucide.createIcons();
+
+        // Interactive ROI Calculator Logic
+        const slider = document.getElementById('orderSlider');
+        const orderValue = document.getElementById('orderValue');
+        const projectedOrders = document.getElementById('projectedOrders');
+        const revenueLift = document.getElementById('revenueLift');
+
+        function updateCalculator() {
+            const currentOrders = parseInt(slider.value);
+            orderValue.innerText = currentOrders;
+            
+            // Projected uplift: ~2.8x with storefront + retargeting
+            const projected = Math.round(currentOrders * 2.8);
+            projectedOrders.innerText = projected;
+
+            // Estimated revenue lift based on avg ৳900 AOV
+            const delta = (projected - currentOrders) * 900;
+            revenueLift.innerText = '৳ ' + delta.toLocaleString();
+        }
+
+        if (slider) {
+            slider.addEventListener('input', updateCalculator);
+            updateCalculator();
+        }
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                const isHidden = answer.classList.contains('hidden');
+
+                // Close all others
+                document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.faq-toggle i').forEach(el => el.style.transform = 'rotate(0deg)');
+
+                if (isHidden) {
+                    answer.classList.remove('hidden');
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -1,51 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <!-- Deep Lavender Twilight Background -->
-    <linearGradient id="bgLav" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a0b2e" />
-      <stop offset="50%" stop-color="#130822" />
-      <stop offset="100%" stop-color="#0d0718" />
+    <!-- Deep Luxury Lavender Ink Gradient -->
+    <linearGradient id="inkLav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180e2f" />
+      <stop offset="50%" stop-color="#100822" />
+      <stop offset="100%" stop-color="#080412" />
     </linearGradient>
 
-    <!-- Electric Chartreuse Wing -->
+    <!-- Chartreuse Electric Glow -->
     <linearGradient id="chartreuseWing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ccff00" />
-      <stop offset="100%" stop-color="#a3e635" />
+      <stop offset="0%" stop-color="#b6ff00" />
+      <stop offset="100%" stop-color="#84cc16" />
     </linearGradient>
 
-    <!-- Tomato Red Arrow -->
-    <linearGradient id="tomatoArrow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff8a75" />
-      <stop offset="100%" stop-color="#ff6347" />
+    <!-- Tomato Red Vector -->
+    <linearGradient id="tomatoRocket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff775e" />
+      <stop offset="100%" stop-color="#ea3219" />
     </linearGradient>
 
-    <!-- Glowing effects -->
-    <filter id="chartreuseGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#ccff00" flood-opacity="0.5"/>
-    </filter>
-    <filter id="tomatoGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#ff6347" flood-opacity="0.6"/>
+    <filter id="cBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#b6ff00" flood-opacity="0.55"/>
     </filter>
   </defs>
 
-  <!-- Deep Lavender Base Container with subtle border -->
-  <rect width="500" height="500" rx="120" fill="url(#bgLav)" stroke="rgba(216, 180, 254, 0.25)" stroke-width="3" />
+  <!-- Base Slate Tile -->
+  <rect width="500" height="500" rx="110" fill="url(#inkLav)" stroke="rgba(203, 175, 245, 0.2)" stroke-width="2.5" />
 
-  <!-- Dynamic Flying Wing in Electric Chartreuse -->
-  <path d="M 140 375 C 220 340, 370 260, 420 110 C 330 180, 230 250, 140 375 Z" fill="url(#chartreuseWing)" filter="url(#chartreuseGlow)" />
+  <!-- Dynamic Flying Wing in Chartreuse -->
+  <path d="M 140 375 C 220 340, 370 260, 420 110 C 330 180, 230 250, 140 375 Z" fill="url(#chartreuseWing)" filter="url(#cBloom)" />
 
-  <!-- Lettermark K: Lavender Stem + Tomato Arrow -->
+  <!-- Monogram K Structure -->
   <g>
-    <!-- Vertical Stem in Soft Glowing Lavender -->
-    <rect x="135" y="125" width="46" height="250" rx="23" fill="#e9d5ff" />
-
-    <!-- Upper Arm in Lavender -->
-    <path d="M 180 245 L 295 130 C 304 121 318 121 327 130 C 336 139 336 153 327 162 L 225 265 Z" fill="#f3e8ff" />
-
-    <!-- Lower Rocket/Arrow in Tomato Red -->
-    <path d="M 215 250 L 330 365 C 339 374 339 388 330 397 C 321 406 307 406 298 397 L 180 280 Z" fill="url(#tomatoArrow)" filter="url(#tomatoGlow)" />
+    <!-- Lavender Main Column -->
+    <rect x="135" y="125" width="46" height="250" rx="23" fill="#f0eafc" />
+    <!-- Upper Diagonal Wing in Lavender -->
+    <path d="M 180 245 L 295 130 C 304 121 318 121 327 130 C 336 139 336 153 327 162 L 225 265 Z" fill="#e1d5f9" />
+    <!-- Lower Diagonal Launch Vector in Tomato Red -->
+    <path d="M 215 250 L 330 365 C 339 374 339 388 330 397 C 321 406 307 406 298 397 L 180 280 Z" fill="url(#tomatoRocket)" />
   </g>
 
-  <!-- Electric Chartreuse Star/Sparkle Accent -->
-  <circle cx="415" cy="110" r="14" fill="#ccff00" filter="url(#chartreuseGlow)" />
+  <!-- Modern Telemetry Indicator -->
+  <circle cx="415" cy="110" r="14" fill="#b6ff00" filter="url(#cBloom)" />
 </svg>
