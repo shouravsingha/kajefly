@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajefly — ছোট ব্র্যান্ড, বড় উড়ান 🚀</title>
+    <meta name="description" content="Kajefly — AI-powered digital agency for F-Commerce, food brands & local businesses in Bangladesh. Social media, website, branding সব এক জায়গায়।">
+    <meta name="keywords" content="digital agency bangladesh, f-commerce marketing, social media management, branding, kajefly">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kajefly — ছোট ব্র্যান্ড, বড় উড়ান 🚀">
+    <meta property="og:description" content="AI-powered digital growth partner for small brands in Bangladesh">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kajefly.github.io">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
+                    },
+                    fontFamily: {
+                        bangla: ['Hind Siliguri', 'Noto Sans Bengali', 'sans-serif'],
+                        heading: ['Inter', 'Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        * { font-family: 'Inter', 'Hind Siliguri', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0c4a6e 0%, #075985 30%, #0369a1 60%, #0284c7 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(14, 165, 233, 0.6); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .counter { font-variant-numeric: tabular-nums; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- ============ NAVBAR ============ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-accent-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">K</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">Kajefly</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-white/80 hover:text-white transition font-medium">সার্ভিস</a>
+                    <a href="#portfolio" class="text-white/80 hover:text-white transition font-medium">পোর্টফোলিও</a>
+                    <a href="#pricing" class="text-white/80 hover:text-white transition font-medium">প্রাইসিং</a>
+                    <a href="#testimonials" class="text-white/80 hover:text-white transition font-medium">রিভিউ</a>
+                    <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105">
+                        ফ্রি কনসালটেশন
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-900/95 backdrop-blur-lg border-t border-white/10">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#services" class="block text-white/80 hover:text-white transition py-2 font-medium">সার্ভিস</a>
+                <a href="#portfolio" class="block text-white/80 hover:text-white transition py-2 font-medium">পোর্টফোলিও</a>
+                <a href="#pricing" class="block text-white/80 hover:text-white transition py-2 font-medium">প্রাইসিং</a>
+                <a href="#testimonials" class="block text-white/80 hover:text-white transition py-2 font-medium">রিভিউ</a>
+                <a href="#contact" class="block bg-accent-500 text-white text-center px-6 py-3 rounded-full font-semibold mt-4">
+                    ফ্রি কনসালটেশন
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-brand-400/20 rounded-full blur-3xl float-animation"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl float-animation" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-white/90 text-sm font-medium">AI-Powered Digital Agency</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        ছোট ব্র্যান্ড,<br>
+                        <span class="gradient-text">বড় উড়ান</span> 🚀
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-white/80 mb-8 max-w-lg mx-auto lg:mx-0 font-bangla leading-relaxed">
+                        আপনার F-Commerce বা লোকাল ব্র্যান্ডের জন্য AI-powered সোশ্যাল মিডিয়া ম্যানেজমেন্ট, ওয়েবসাইট ও ব্র্যান্ডিং — সব এক জায়গায়।
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-accent-500/30 pulse-glow text-center">
+                            ফ্রি ডেমো দেখুন →
+                        </a>
+                        <a href="#portfolio" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg transition-all text-center">
+                            আমাদের কাজ দেখুন
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="flex gap-8 mt-12 justify-center lg:justify-start">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white counter" data-target="50">0</div>
+                            <div class="text-white/60 text-sm mt-1">সন্তুষ্ট ক্লায়েন্ট</div>
+                        </div>
+                        <div class="w-px bg-white/20"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white counter" data-target="500">0</div>
+                            <div class="text-white/60 text-sm mt-1">পোস্ট ডেলিভার্ড</div>
+                        </div>
+                        <div class="w-px bg-white/20"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white counter" data-target="98">0</div>
+                            <div class="text-white/60 text-sm mt-1">% রিটেনশন রেট</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <!-- Mockup Cards -->
+                        <div class="w-72 h-96 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 p-6 transform rotate-3 hover:rotate-0 transition-all duration-500 card-hover">
+                            <div class="w-full h-48 bg-gradient-to-br from-accent-400 to-pink-500 rounded-2xl mb-4 flex items-center justify-center">
+                                <span class="text-6xl">📱</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="h-3 bg-white/30 rounded-full w-3/4"></div>
+                                <div class="h-3 bg-white/20 rounded-full w-1/2"></div>
+                                <div class="h-3 bg-white/15 rounded-full w-2/3"></div>
+                            </div>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 bg-brand-500/30 rounded-full text-xs text-white/80">#branding</span>
+                                <span class="px-3 py-1 bg-accent-500/30 rounded-full text-xs text-white/80">#social</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -left-16 top-8 bg-white rounded-2xl shadow-2xl p-4 transform -rotate-6 float-animation">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600 text-lg">📈</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-500">Engagement</div>
+                                    <div class="text-lg font-bold text-green-600">+340%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -right-12 bottom-16 bg-white rounded-2xl shadow-2xl p-4 transform rotate-6 float-animation" style="animation-delay: -2s;">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 text-lg">🛒</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-500">Sales Growth</div>
+                                    <div class="text-lg font-bold text-blue-600">+180%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave Divider -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 50L48 45.7C96 41.3 192 32.7 288 30.3C384 28 480 32 576 38.3C672 44.7 768 53.3 864 55.7C960 58 1056 54 1152 48.3C1248 42.7 1344 35.3 1392 31.7L1440 28V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">আমাদের সার্ভিস</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-4">
+                    আপনার ব্র্যান্ডের জন্য <span class="gradient-text">যা যা করি</span>
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto font-bangla">
+                    AI-powered tools ব্যবহার করে আমরা আপনার সময় ও খরচ বাঁচাই, কিন্তু quality-তে কোনো compromise নেই।
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-brand-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="layout-grid" class="w-7 h-7 text-brand-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">সোশ্যাল মিডিয়া ম্যানেজমেন্ট</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        পুরো মাসের কন্টেন্ট ক্যালেন্ডার, ক্যাপশন, হ্যাশট্যাগ, গ্রাফিক্স এবং শিডিউলিং — সব আমরা সামলাই।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> মাসে ৮-১৫টি পোস্ট
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ক্যাপশন + হ্যাশট্যাগ
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> অটো-শিডিউলিং
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-accent-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="palette" class="w-7 h-7 text-accent-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">ব্র্যান্ডিং ও গ্রাফিক্স</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        লোগো, ব্র্যান্ড আইডেন্টিটি, পোস্ট ডিজাইন, স্টোরি টেমপ্লেট — আপনার ব্র্যান্ডকে প্রফেশনাল লুক দিন।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> কাস্টম গ্রাফিক্স
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ব্র্যান্ড গাইডলাইন
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> AI-generated মকআপ
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-green-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="globe" class="w-7 h-7 text-green-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">ওয়েবসাইট ও ল্যান্ডিং পেজ</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        মোবাইল-ফ্রেন্ডলি, ফাস্ট-লোডিং ওয়েবসাইট বা ল্যান্ডিং পেজ তৈরি করি যা কাস্টমারদের convert করে।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> রেসপন্সিভ ডিজাইন
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> SEO অপ্টিমাইজড
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ফ্রি হোস্টিং সেটআপ
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-purple-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="video" class="w-7 h-7 text-purple-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">রিলস ও ভিডিও কন্টেন্ট</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        ভাইরাল রিলস স্ক্রিপ্ট, প্রোডাক্ট ভিডিও আইডিয়া, এবং এডিটিং গাইডলাইন — এংগেজমেন্ট বাড়ান ১০x।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> রিলস স্ক্রিপ্ট রাইটিং
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ট্রেন্ড রিসার্চ
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> কন্টেন্ট ক্যালেন্ডার
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-red-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="bar-chart-3" class="w-7 h-7 text-red-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">পারফরম্যান্স রিপোর্টিং</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        প্রতি মাসে বিস্তারিত analytics রিপোর্ট — কী কাজ করছে, কী improve করতে হবে, সব data-driven।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> মান্থলি অ্যানালিটিক্স
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> কম্পিটিটর অ্যানালাইসিস
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> গ্রোথ স্ট্র্যাটেজি
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="group bg-gray-50 hover:bg-brand-500 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-yellow-100 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mb-6 transition">
+                        <i data-lucide="zap" class="w-7 h-7 text-yellow-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition">Ad Campaign ম্যানেজমেন্ট</h3>
+                    <p class="text-gray-500 group-hover:text-white/80 transition font-bangla leading-relaxed">
+                        Facebook ও Instagram ads setup, targeting, এবং optimization — প্রতিটি টাকার সর্বোচ্চ ROI নিশ্চিত করি।
+                    </p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Meta Ads সেটআপ
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> A/B টেস্টিং
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white/70 transition">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ROAS অপ্টিমাইজেশন
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">কিভাবে কাজ করি</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+                    মাত্র <span class="gradient-text">৩ স্টেপে</span> শুরু করুন
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-brand-500 rounded-3xl flex items-center justify-center mx-auto mb-6 text-white text-3xl font-extrabold shadow-lg shadow-brand-500/30">
+                        ১
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">ফ্রি অডিট করুন</h3>
+                    <p class="text-gray-500 font-bangla">আপনার ব্র্যান্ডের বর্তমান অবস্থা analyze করে একটি ফ্রি audit রিপোর্ট দিই।</p>
+                </div>
+                
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-accent-500 rounded-3xl flex items-center justify-center mx-auto mb-6 text-white text-3xl font-extrabold shadow-lg shadow-accent-500/30">
+                        ২
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">প্ল্যান সিলেক্ট করুন</h3>
+                    <p class="text-gray-500 font-bangla">আপনার budget ও need অনুযায়ী সঠিক প্যাকেজ বেছে নিন।</p>
+                </div>
+                
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-green-500 rounded-3xl flex items-center justify-center mx-auto mb-6 text-white text-3xl font-extrabold shadow-lg shadow-green-500/30">
+                        ৩
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">রেজাল্ট দেখুন</h3>
+                    <p class="text-gray-500 font-bangla">৭ দিনের মধ্যে প্রথম deliverables পাবেন। মাসিক রিপোর্টে growth ট্র্যাক করুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PORTFOLIO SECTION ============ -->
+    <section id="portfolio" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">পোর্টফোলিও</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-4">
+                    আমাদের <span class="gradient-text">সাম্প্রতিক কাজ</span>
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto font-bangla">
+                    দেখুন কিভাবে আমরা ছোট ব্র্যান্ডগুলোকে ডিজিটালি transform করেছি।
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-rose-400 to-pink-600 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <span class="text-5xl mb-3 block">👗</span>
+                            <h4 class="text-xl font-bold">StyleBD Fashion</h4>
+                            <p class="text-white/80 text-sm mt-2">F-Commerce Clothing Brand</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-xs font-medium">Social Media</span>
+                            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-medium">Branding</span>
+                        </div>
+                        <p class="text-gray-500 text-sm font-bangla">সোশ্যাল মিডিয়া ম্যানেজমেন্ট ও ব্র্যান্ড রিডিজাইনের মাধ্যমে engagement ৩৪০% বৃদ্ধি।</p>
+                        <div class="mt-4 flex items-center gap-2 text-green-600 font-semibold text-sm">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            +340% Engagement
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <span class="text-5xl mb-3 block">🍜</span>
+                            <h4 class="text-xl font-bold">Rannaghor Kitchen</h4>
+                            <p class="text-white/80 text-sm mt-2">Cloud Kitchen / Food Delivery</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Website</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Content</span>
+                        </div>
+                        <p class="text-gray-500 text-sm font-bangla">ওয়েবসাইট ও কন্টেন্ট মার্কেটিং-এর মাধ্যমে অনলাইন অর্ডার ১৮০% বৃদ্ধি।</p>
+                        <div class="mt-4 flex items-center gap-2 text-green-600 font-semibold text-sm">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            +180% Orders
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <span class="text-5xl mb-3 block">💄</span>
+                            <h4 class="text-xl font-bold">GlowUp Cosmetics</h4>
+                            <p class="text-white/80 text-sm mt-2">Beauty & Skincare Brand</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">Reels</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Ads</span>
+                        </div>
+                        <p class="text-gray-500 text-sm font-bangla">রিলস কন্টেন্ট ও Meta Ads দিয়ে ৩ মাসে followers ১০K থেকে ৫০K।</p>
+                        <div class="mt-4 flex items-center gap-2 text-green-600 font-semibold text-sm">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            +400% Followers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRICING SECTION ============ -->
+    <section id="pricing" class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">প্রাইসিং</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-4">
+                    আপনার <span class="gradient-text">বাজেটে</span> সেরা প্ল্যান
+                </h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto font-bangla">
+                    কোনো hidden charge নেই। যা দেখছেন, তাই পাচ্ছেন।
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg card-hover scroll-reveal border-2 border-transparent hover:border-brand-200">
+                    <div class="text-center">
+                        <span class="text-4xl">🥉</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4">Starter</h3>
+                        <p class="text-gray-400 text-sm mt-2 font-bangla">যারা সবে শুরু করছেন</p>
+                        <div class="mt-6">
+                            <span class="text-4xl font-extrabold text-gray-900">৳৫,০০০</span>
+                            <span class="text-gray-400">/মাস</span>
+                        </div>
+                    </div>
+                    <ul class="mt-8 space-y-4">
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            মাসে ৮টি পোস্ট (ক্যাপশন + গ্রাফিক্স)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            কন্টেন্ট ক্যালেন্ডার
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            অটো-শিডিউলিং
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            মান্থলি রিপোর্ট
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300 font-bangla">
+                            <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                            ওয়েবসাইট
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300 font-bangla">
+                            <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                            Ad Campaign
+                        </li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 text-center bg-gray-100 hover:bg-brand-500 hover:text-white text-gray-700 rounded-2xl font-semibold transition-all">
+                        শুরু করুন →
+                    </a>
+                </div>
+                
+                <!-- Growth (Popular) -->
+                <div class="bg-brand-500 rounded-3xl p-8 shadow-2xl shadow-brand-500/30 card-hover scroll-reveal transform md:scale-105 relative border-2 border-brand-400">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                        🔥 সবচেয়ে জনপ্রিয়
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl">🥇</span>
+                        <h3 class="text-2xl font-bold text-white mt-4">Growth</h3>
+                        <p class="text-white/60 text-sm mt-2 font-bangla">যারা দ্রুত বাড়তে চান</p>
+                        <div class="mt-6">
+                            <span class="text-4xl font-extrabold text-white">৳১০,০০০</span>
+                            <span class="text-white/60">/মাস</span>
+                        </div>
+                    </div>
+                    <ul class="mt-8 space-y-4">
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            মাসে ১৫টি পোস্ট (ক্যাপশন + গ্রাফিক্স)
+                        </li>
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            কন্টেন্ট ক্যালেন্ডার + স্ট্র্যাটেজি
+                        </li>
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            ২টি রিলস স্ক্রিপ্ট
+                        </li>
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            ওয়েবসাইট / ল্যান্ডিং পেজ
+                        </li>
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            বিস্তারিত মান্থলি রিপোর্ট
+                        </li>
+                        <li class="flex items-center gap-3 text-white/90 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-300 flex-shrink-0"></i>
+                            কম্পিটিটর অ্যানালাইসিস
+                        </li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 text-center bg-white text-brand-600 rounded-2xl font-bold transition-all hover:bg-gray-100 hover:scale-105">
+                        এখনই নিন →
+                    </a>
+                </div>
+                
+                <!-- Premium -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg card-hover scroll-reveal border-2 border-transparent hover:border-brand-200">
+                    <div class="text-center">
+                        <span class="text-4xl">💎</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4">Premium</h3>
+                        <p class="text-gray-400 text-sm mt-2 font-bangla">ফুল-স্কেল ডিজিটাল ট্রান্সফরমেশন</p>
+                        <div class="mt-6">
+                            <span class="text-4xl font-extrabold text-gray-900">৳২০,০০০</span>
+                            <span class="text-gray-400">/মাস</span>
+                        </div>
+                    </div>
+                    <ul class="mt-8 space-y-4">
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            Growth-এর সবকিছু +
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            Meta Ads সেটআপ ও ম্যানেজমেন্ট
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            ৪টি রিলস স্ক্রিপ্ট + এডিটিং গাইড
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            ইনফ্লুয়েন্সার কোলাবোরেশন প্ল্যান
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-bangla">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            ২৪/৭ WhatsApp সাপোর্ট
+                        </li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 text-center bg-gray-100 hover:bg-brand-500 hover:text-white text-gray-700 rounded-2xl font-semibold transition-all">
+                        কন্টাক্ট করুন →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section id="testimonials" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">ক্লায়েন্ট রিভিউ</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3">
+                    যারা আমাদের <span class="gradient-text">বিশ্বাস করেন</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-600 font-bangla leading-relaxed mb-6">
+                        "Kajefly আমাদের Facebook page-কে একদম transform করে দিয়েছে। আগে ১০-২০ like পেতাম, এখন ৫০০+ reach প্রতি পোস্টে! Sales-ও বেড়েছে significantly।"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-rose-200 rounded-full flex items-center justify-center text-xl">👩</div>
+                        <div>
+                            <div class="font-bold text-gray-900">ফারজানা আক্তার</div>
+                            <div class="text-sm text-gray-400">StyleBD Fashion</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-600 font-bangla leading-relaxed mb-6">
+                        "Website থেকে অর্ডার আসবে ভাবিনি। কিন্তু Kajefly-র বানানো site আর content strategy-র পরে daily ১৫-২০টা অর্ডার পাচ্ছি। Amazing service!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center text-xl">👨</div>
+                        <div>
+                            <div class="font-bold text-gray-900">রাকিব হাসান</div>
+                            <div class="text-sm text-gray-400">Rannaghor Kitchen</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-3xl p-8 card-hover scroll-reveal">
+                    <div class="flex gap-1 mb-4">
+                        <span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-600 font-bangla leading-relaxed mb-6">
+                        "প্রতি মাসে রিপোর্ট পেয়ে বুঝতে পারি কোথায় improve হচ্ছে। Content quality আর consistency-র কারণে ব্র্যান্ড trust অনেক বেড়েছে।"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-violet-200 rounded-full flex items-center justify-center text-xl">👩</div>
+                        <div>
+                            <div class="font-bold text-gray-900">নাফিসা ইসলাম</div>
+                            <div class="text-sm text-gray-400">GlowUp Cosmetics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section class="py-20 hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute -top-20 -right-20 w-60 h-60 bg-accent-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-brand-300/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 scroll-reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+                আপনার ব্র্যান্ডের ডিজিটাল উড়ান<br>আজই শুরু করুন! 🚀
+            </h2>
+            <p class="text-white/80 text-lg mb-8 font-bangla max-w-2xl mx-auto">
+                প্রথম ৫ জন ক্লায়েন্টের জন্য সম্পূর্ণ ফ্রি অডিট + ১০% ডিসকাউন্ট। সীমিত সময়ের অফার!
+            </p>
+            <a href="#contact" class="inline-block bg-accent-500 hover:bg-accent-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent-500/40">
+                ফ্রি অডিট বুক করুন →
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <div class="scroll-reveal">
+                    <span class="text-brand-500 font-semibold text-sm uppercase tracking-wider">যোগাযোগ</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-6">
+                        চলুন <span class="gradient-text">কথা বলি!</span>
+                    </h2>
+                    <p class="text-gray-500 text-lg font-bangla leading-relaxed mb-8">
+                        আপনার ব্র্যান্ডের গ্রোথ নিয়ে কথা বলতে চান? নিচের ফর্ম পূরণ করুন অথবা সরাসরি WhatsApp-এ মেসেজ করুন।
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <a href="#" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center group-hover:bg-green-500 transition">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-green-600 group-hover:text-white transition"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900">WhatsApp</div>
+                                <div class="text-gray-400 text-sm">+880 XXXX-XXXXXX</div>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:bg-blue-500 transition">
+                                <i data-lucide="mail" class="w-6 h-6 text-blue-600 group-hover:text-white transition"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900">Email</div>
+                                <div class="text-gray-400 text-sm">hello@kajefly.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center group-hover:bg-purple-500 transition">
+                                <i data-lucide="instagram" class="w-6 h-6 text-purple-600 group-hover:text-white transition"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900">Instagram</div>
+                                <div class="text-gray-400 text-sm">@kajefly</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="scroll-reveal">
+                    <form class="bg-gray-50 rounded-3xl p-8 space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-bangla">আপনার নাম</label>
+                            <input type="text" placeholder="যেমন: রাকিব হাসান" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition font-bangla">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-bangla">ফোন / WhatsApp নম্বর</label>
+                            <input type="tel" placeholder="01XXXXXXXXX" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-bangla">আপনার ব্র্যান্ড / পেজের নাম</label>
+                            <input type="text" placeholder="যেমন: StyleBD Fashion" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition font-bangla">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-bangla">আপনার প্রয়োজন</label>
+                            <select class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition font-bangla text-gray-500">
+                                <option>সোশ্যাল মিডিয়া ম্যানেজমেন্ট</option>
+                                <option>ওয়েবসাইট তৈরি</option>
+                                <option>ব্র্যান্ডিং ও লোগো</option>
+                                <option>Ad Campaign</option>
+                                <option>সবকিছু দরকার!</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-bangla">কিছু বলতে চান?</label>
+                            <textarea rows="3" placeholder="আপনার ব্র্যান্ড সম্পর্কে কিছু বলুন..." class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition font-bangla resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-4 rounded-2xl font-bold text-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/30">
+                            ফ্রি কনসালটেশন বুক করুন 🚀
+                        </button>
+                        <p class="text-center text-gray-400 text-xs font-bangla">
+                            সাধারণত ২ ঘণ্টার মধ্যে রিপ্লাই দিই। ১০০% ফ্রি, কোনো obligation নেই।
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-accent-500 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">K</span>
+                        </div>
+                        <span class="text-xl font-bold">Kajefly</span>
+                    </div>
+                    <p class="text-gray-400 font-bangla leading-relaxed max-w-sm">
+                        ছোট ব্র্যান্ডের ডিজিটাল গ্রোথ পার্টনার। AI-powered social media management, branding ও website solution।
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-500 rounded-xl flex items-center justify-center transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-500 rounded-xl flex items-center justify-center transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-500 rounded-xl flex items-center justify-center transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">সার্ভিস</h4>
+                    <ul class="space-y-3 text-gray-400 font-bangla">
+                        <li><a href="#services" class="hover:text-white transition">সোশ্যাল মিডিয়া</a></li>
+                        <li><a href="#services" class="hover:text-white transition">ব্র্যান্ডিং</a></li>
+                        <li><a href="#services" class="hover:text-white transition">ওয়েবসাইট</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Ad Campaign</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">কোম্পানি</h4>
+                    <ul class="space-y-3 text-gray-400 font-bangla">
+                        <li><a href="#portfolio" class="hover:text-white transition">পোর্টফোলিও</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">প্রাইসিং</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">রিভিউ</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2026 Kajefly. সর্বস্বত্ব সংরক্ষিত। ❤️ দিয়ে বাংলাদেশে তৈরি।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-900/95', 'backdrop-blur-lg', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-brand-900/95', 'backdrop-blur-lg', 'shadow-lg');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+        
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        
+        // Counter animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.dataset.target);
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + '+';
+                        }
+                    }, 30);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
