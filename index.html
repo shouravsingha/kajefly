@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kajefly — ছোট ব্র্যান্ড, বড় উড়ান 🚀 | Premium AI Agency</title>
-    <meta name="description" content="Kajefly — Elite AI-powered digital agency for F-Commerce, food brands & local businesses in Bangladesh. Social media, website, branding সব এক জায়গায়।">
-    <meta name="keywords" content="digital agency bangladesh, f-commerce marketing, social media management, branding, kajefly">
+    <title>Kajefly — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার 🚀 | AI Micro-Agency</title>
+    <meta name="description" content="Kajefly — ফিউচারিস্টিক AI ডিজিটাল এজেন্সি। F-Commerce ও লোকাল ব্র্যান্ডের সোশ্যাল মিডিয়া, কনভার্টিং ওয়েবসাইট ও ভাইরাল কন্টেন্ট সমাধান।">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Kajefly — ছোট ব্র্যান্ড, বড় উড়ান 🚀">
-    <meta property="og:description" content="Elite AI-Powered Digital Growth Partner for Small & F-Commerce Brands in Bangladesh">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kajefly — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার 🚀">
+    <meta property="og:description" content="Lavender, Chartreuse & Tomato Red Avant-Garde AI Agency for Bangladesh">
     <meta property="og:url" content="https://shouravsingha.github.io/kajefly/">
     
     <!-- Tailwind CSS CDN -->
@@ -20,32 +18,37 @@
             theme: {
                 extend: {
                     colors: {
-                        charcoal: {
-                            950: '#090a0c',
-                            900: '#111317',
-                            800: '#181b22',
-                            700: '#232732',
-                            600: '#323746',
+                        lavender: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#3b0764',
+                            900: '#1a0b2e',
+                            950: '#0d0718',
                         },
-                        silver: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
+                        chartreuse: {
+                            300: '#d9f99d',
+                            400: '#bef264',
+                            500: '#a3e635',
+                            electric: '#ccff00',
+                            glow: 'rgba(204, 255, 0, 0.35)'
                         },
-                        signal: {
-                            400: '#f87171',
-                            500: '#ef4444',
-                            600: '#dc2626',
-                            700: '#b91c1c',
-                            glow: 'rgba(239, 68, 68, 0.45)'
+                        tomato: {
+                            400: '#ff8a75',
+                            500: '#ff6347',
+                            600: '#e0482d',
+                            700: '#c0331b',
+                            glow: 'rgba(255, 99, 71, 0.4)'
                         }
                     },
                     fontFamily: {
-                        bangla: ['Hind Siliguri', 'Noto Sans Bengali', 'sans-serif'],
-                        heading: ['Inter', 'Hind Siliguri', 'sans-serif'],
+                        bangla: ['Hind Siliguri', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                     }
                 }
             }
@@ -55,171 +58,180 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom Styles -->
     <style>
-        * { font-family: 'Inter', 'Hind Siliguri', sans-serif; }
         body {
-            background-color: #090a0c;
-            color: #e2e8f0;
+            background-color: #0d0718;
+            color: #f3e8ff;
+            font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
         }
-        .gradient-signal {
-            background: linear-gradient(135deg, #ef4444 0%, #ff6b6b 50%, #f87171 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .silver-gradient-text {
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .luxury-card {
-            background: rgba(24, 27, 34, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.08);
+        .bento-card {
+            background: linear-gradient(135deg, rgba(26, 11, 46, 0.75) 0%, rgba(18, 9, 32, 0.9) 100%);
+            border: 1px solid rgba(216, 180, 254, 0.15);
+            backdrop-filter: blur(16px);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .luxury-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(239, 68, 68, 0.4);
-            box-shadow: 0 15px 35px -10px rgba(239, 68, 68, 0.2);
+        .bento-card:hover {
+            border-color: rgba(204, 255, 0, 0.45);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(204, 255, 0, 0.15);
         }
-        .signal-glow-btn {
-            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
-            transition: all 0.3s ease;
+        .gradient-lavender-chartreuse {
+            background: linear-gradient(120deg, #e9d5ff 20%, #ccff00 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .signal-glow-btn:hover {
-            box-shadow: 0 0 40px rgba(239, 68, 68, 0.7);
-            transform: scale(1.03);
+        .tomato-btn {
+            background: linear-gradient(135deg, #ff6347 0%, #e0482d 100%);
+            box-shadow: 0 0 25px rgba(255, 99, 71, 0.45);
+            transition: all 0.25s ease;
         }
-        .silver-border {
-            border: 1px solid rgba(226, 232, 240, 0.12);
+        .tomato-btn:hover {
+            box-shadow: 0 0 40px rgba(255, 99, 71, 0.75);
+            transform: scale(1.02);
         }
-        .radial-spotlight {
-            background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.15) 0%, rgba(9, 10, 12, 0) 70%);
+        .chartreuse-pill {
+            background: rgba(204, 255, 0, 0.1);
+            border: 1px solid rgba(204, 255, 0, 0.3);
+            color: #ccff00;
+        }
+        .lavender-glow {
+            position: absolute;
+            filter: blur(130px);
+            pointer-events: none;
+            border-radius: 9999px;
         }
     </style>
 </head>
-<body class="bg-charcoal-950 text-silver-200 antialiased selection:bg-signal-600 selection:text-white">
+<body class="selection:bg-chartreuse-electric selection:text-lavender-950">
 
-    <!-- ============ NAVBAR ============ -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-charcoal-950/80 backdrop-blur-xl border-b border-silver-200/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 bg-charcoal-800 rounded-xl silver-border flex items-center justify-center group-hover:border-signal-500/50 transition">
-                        <span class="text-signal-500 font-black text-xl tracking-tighter">K</span>
+    <!-- Ambient Glow Orbs -->
+    <div class="lavender-glow top-0 left-1/4 w-[500px] h-[500px] bg-lavender-600/15"></div>
+    <div class="lavender-glow top-[35%] right-10 w-[450px] h-[450px] bg-tomato-500/12"></div>
+    <div class="lavender-glow bottom-40 left-10 w-[550px] h-[550px] bg-chartreuse-500/10"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="fixed top-0 inset-x-0 z-50 bg-lavender-950/80 backdrop-blur-xl border-b border-lavender-200/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-lavender-700 via-tomato-500 to-chartreuse-electric p-[2px]">
+                    <div class="w-full h-full bg-lavender-950 rounded-[14px] flex items-center justify-center">
+                        <span class="font-black text-chartreuse-electric text-xl">K</span>
                     </div>
-                    <div>
-                        <span class="text-2xl font-black text-white tracking-wide">Kajefly</span>
-                        <span class="text-xs block text-silver-400 font-bangla -mt-1">কাজেফ্লাই</span>
-                    </div>
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="#services" class="text-silver-300 hover:text-white transition">সার্ভিস</a>
-                    <a href="#portfolio" class="text-silver-300 hover:text-white transition">পোর্টফোলিও</a>
-                    <a href="#pricing" class="text-silver-300 hover:text-white transition">প্রাইসিং</a>
-                    <a href="#contact" class="signal-glow-btn text-white px-6 py-2.5 rounded-full font-bold transition">
-                        ফ্রি কনসালটেশন 🔥
-                    </a>
                 </div>
+                <div>
+                    <span class="text-2xl font-black text-white tracking-tight">Kajefly</span>
+                    <span class="block text-[11px] font-bangla text-lavender-300 -mt-1 font-semibold">কাজেফ্লাই</span>
+                </div>
+            </a>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-lavender-200">
+                <a href="#services" class="hover:text-chartreuse-electric transition">সার্ভিস</a>
+                <a href="#showcase" class="hover:text-chartreuse-electric transition">ট্রান্সফরমেশন</a>
+                <a href="#pricing" class="hover:text-chartreuse-electric transition">প্যাকেজ</a>
+                <a href="#faq" class="hover:text-chartreuse-electric transition">প্রশ্নোত্তর</a>
+                <a href="#audit" class="tomato-btn text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide">
+                    ফ্রি অডিট নিন 🎁
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- ============ HERO SECTION ============ -->
-    <section class="min-h-screen relative pt-36 pb-20 flex items-center overflow-hidden radial-spotlight">
-        <!-- Ambient Grid Background -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f243015_1px,transparent_1px),linear-gradient(to_bottom,#1f243015_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <section class="pt-36 pb-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Hero Left Content -->
+                <!-- Left Headline Area -->
                 <div class="lg:col-span-7 text-center lg:text-left">
-                    <!-- Premium Badge -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-charcoal-900 silver-border mb-8">
-                        <span class="w-2.5 h-2.5 rounded-full bg-signal-500 animate-pulse"></span>
-                        <span class="text-xs uppercase tracking-widest text-silver-300 font-semibold">Bangladesh's #1 AI Growth Agency</span>
+                    <!-- High-tech Pill -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full chartreuse-pill mb-8 text-xs font-bold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-chartreuse-electric animate-ping"></span>
+                        AI Micro-Agency for F-Commerce 2026
                     </div>
 
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.1] mb-6">
-                        <span class="silver-gradient-text">ছোট ব্র্যান্ড,</span><br>
-                        <span class="gradient-signal">বড় উড়ান! 🚀</span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] mb-6">
+                        ছোট ব্র্যান্ডের<br>
+                        <span class="gradient-lavender-chartreuse">সুপার-গ্রোথ পার্টনার!</span>
                     </h1>
 
-                    <p class="text-lg sm:text-xl text-silver-400 font-bangla max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        আপনার F-Commerce ও লোকাল ব্যবসার জন্য হাই-কনভার্টিং সোশ্যাল মিডিয়া কন্টেন্ট, প্রিমিয়াম ব্র্যান্ডিং এবং অটোমেশন — ন্যূনতম খরচে সর্বোচ্চ ফলাফল।
+                    <p class="text-lg sm:text-xl text-lavender-200/80 font-bangla max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-normal">
+                        আপনার Facebook পেজের দুর্বল এনগেজমেন্ট ও সেলস ড্রপ দূর করতে Kajefly এনেছে AI-ড্রিভেন কন্টেন্ট ক্যালেন্ডার, ভাইরাল রিলস এবং ১-ক্লিক অর্ডার ওয়েবসাইট।
                     </p>
 
+                    <!-- CTAs -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#contact" class="signal-glow-btn text-white px-8 py-4 rounded-xl font-bold text-base text-center">
-                            ফ্রি অডিট বুক করুন →
+                        <a href="#audit" class="tomato-btn text-white px-8 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2">
+                            <span>২৪ ঘণ্টার ফ্রি পেজ অডিট</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
-                        <a href="#portfolio" class="px-8 py-4 rounded-xl font-bold text-base text-silver-200 bg-charcoal-800/80 hover:bg-charcoal-700 silver-border text-center transition">
-                            কেস স্টাডি দেখুন
+                        <a href="#services" class="px-8 py-4 rounded-2xl font-bold text-base text-lavender-200 bento-card flex items-center justify-center gap-2 hover:text-chartreuse-electric">
+                            <span>সার্ভিস এক্সপ্লোর করুন</span>
                         </a>
                     </div>
 
-                    <!-- Trust Metrics -->
-                    <div class="grid grid-cols-3 gap-6 pt-12 mt-12 border-t border-silver-200/10">
-                        <div>
-                            <div class="text-3xl font-black text-white">৩৪০%</div>
-                            <div class="text-xs text-silver-400 font-bangla mt-1">গড় রিচ বৃদ্ধি</div>
+                    <!-- Highlight Chips -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-12 pt-8 border-t border-lavender-200/10">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-chartreuse-electric"></i> ০ টাকা প্রাথমিক সেটআপ
                         </div>
-                        <div>
-                            <div class="text-3xl font-black text-white">৫০০+</div>
-                            <div class="text-xs text-silver-400 font-bangla mt-1">কন্টেন্ট ডেলিভার্ড</div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-chartreuse-electric"></i> অর্গানিক রিচ বৃদ্ধি
                         </div>
-                        <div>
-                            <div class="text-3xl font-black text-signal-500">১০০%</div>
-                            <div class="text-xs text-silver-400 font-bangla mt-1">ROI ফোকাসড</div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-lavender-300">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-tomato-500"></i> ১০০% ROI ফোকাসড
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Right Card Mockup -->
-                <div class="lg:col-span-5 relative">
-                    <div class="luxury-card p-6 rounded-3xl border-silver-200/10 relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-6 pb-4 border-b border-silver-200/10">
+                <!-- Right Visual: Futuristic Interactive Glass Deck -->
+                <div class="lg:col-span-5">
+                    <div class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden border-lavender-300/20">
+                        <div class="flex items-center justify-between pb-6 mb-6 border-b border-lavender-200/10">
                             <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-signal-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-charcoal-600"></span>
-                                <span class="w-3 h-3 rounded-full bg-silver-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-tomato-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-chartreuse-electric"></span>
+                                <span class="w-3 h-3 rounded-full bg-lavender-400"></span>
                             </div>
-                            <span class="text-xs font-mono text-silver-400">KAJEFLY_AI_ENGINE_V2</span>
+                            <span class="text-xs font-mono font-bold text-chartreuse-electric uppercase tracking-widest">● LIVE ANALYTICS</span>
                         </div>
 
-                        <div class="space-y-4">
-                            <div class="bg-charcoal-900 p-4 rounded-2xl border border-silver-200/5">
-                                <div class="text-xs text-signal-400 font-semibold uppercase mb-1">Content Automation</div>
-                                <div class="text-sm font-bangla text-silver-200">বাংলা ক্যাপশন, ট্রেন্ডিং হুক ও রিলস স্ক্রিপ্ট অটোমেটিক তৈরি</div>
+                        <!-- Stat Box 1 -->
+                        <div class="bg-lavender-900/50 p-4 rounded-2xl border border-lavender-200/10 mb-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-lavender-300 font-semibold uppercase">অর্গানিক পেজ রিচ</span>
+                                <span class="text-xs font-black text-chartreuse-electric bg-chartreuse-electric/10 px-2 py-0.5 rounded-full">+৩৪০%</span>
                             </div>
-                            <div class="bg-charcoal-900 p-4 rounded-2xl border border-silver-200/5">
-                                <div class="text-xs text-silver-300 font-semibold uppercase mb-1">Visual Branding</div>
-                                <div class="text-sm font-bangla text-silver-200">চারকোল ও সিলভার লাক্সারি মকআপ ডিজাইন যা ক্লায়েন্টের নজর কাড়ে</div>
-                            </div>
-                            <div class="bg-charcoal-900 p-4 rounded-2xl border border-silver-200/5">
-                                <div class="text-xs text-signal-400 font-semibold uppercase mb-1">Lead Conversion</div>
-                                <div class="text-sm font-bangla text-silver-200">সরাসরি ইনবক্স ও ওয়েবসাইটে অর্ডার ড্রাইভ করার স্ট্র্যাটেজি</div>
+                            <div class="text-2xl font-black text-white mt-2">৭২,৫০০+ ভিউস</div>
+                            <div class="w-full bg-lavender-950 h-2 rounded-full mt-3 overflow-hidden">
+                                <div class="bg-gradient-to-r from-tomato-500 to-chartreuse-electric h-full w-[85%] rounded-full"></div>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-4 border-t border-silver-200/10 flex items-center justify-between">
-                            <span class="text-xs text-silver-400">লাইভ স্ট্যাটাস</span>
-                            <span class="text-xs font-bold text-signal-400 flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-signal-500 animate-ping"></span> অ্যাক্টিভ ক্লায়েন্ট স্লট চালু
-                            </span>
+                        <!-- Stat Box 2 -->
+                        <div class="bg-lavender-900/50 p-4 rounded-2xl border border-lavender-200/10 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-lavender-300 font-semibold uppercase">কনভার্সন ও সেলস</span>
+                                <span class="text-xs font-black text-tomato-500 bg-tomato-500/10 px-2 py-0.5 rounded-full">2.8x Growth</span>
+                            </div>
+                            <div class="text-2xl font-black text-white mt-2">৳২,৮০,০০০+</div>
+                            <p class="text-xs font-bangla text-lavender-400 mt-1">ওয়েবসাইট ও কাস্টম মেসেঞ্জার ফানেল থেকে</p>
+                        </div>
+
+                        <!-- Testimonial Mini Pill -->
+                        <div class="p-3 bg-chartreuse-electric/10 rounded-xl border border-chartreuse-electric/20 flex items-center gap-3">
+                            <span class="text-2xl">🔥</span>
+                            <div class="text-xs font-bangla text-chartreuse-300">
+                                <strong>StyleBD এর রিভিউ:</strong> "Kajefly-র রিলস স্ক্রিপ্ট ও পোস্টের পর ইনবক্স অর্ডারে বন্যা বয়ে গেছে!"
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,192 +240,248 @@
         </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
-    <section id="services" class="py-24 bg-charcoal-900/60 border-y border-silver-200/5 relative">
+    <!-- ============ BEFORE VS AFTER TRANSFORMATION ============ -->
+    <section id="showcase" class="py-24 bg-lavender-950/70 border-y border-lavender-200/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-signal-500 font-bold text-xs uppercase tracking-widest">Our Expertise</span>
+                <span class="text-tomato-500 font-bold text-xs uppercase tracking-widest">Real Results</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
-                    আপনার বিজনেসের জন্য <span class="gradient-signal">যা যা করি</span>
+                    সাধারণ পেজ vs <span class="text-chartreuse-electric">Kajefly ট্রান্সফরমেশন</span>
                 </h2>
-                <p class="text-silver-400 font-bangla text-base">
-                    ঐতিহ্যবাহী এজেন্সির তুলনায় ৩ গুণ দ্রুত এবং সাশ্রয়ী সেবা।
-                </p>
+                <p class="text-lavender-300 font-bangla text-base">কেন সাধারণ বুস্টিংয়ের চেয়ে প্রফেশনাল ব্র্যান্ডিং ও কন্টেন্ট বেশি সেল এনে দেয়?</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Bad/Standard Approach -->
+                <div class="p-8 rounded-3xl bg-lavender-900/20 border border-tomato-500/30">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-tomato-500/20 text-tomato-500 flex items-center justify-center font-bold">✕</span>
+                        <h3 class="text-xl font-bold text-white">সাধারণ অপেশাদার পেজ</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-lavender-300 font-bangla">
+                        <li class="flex items-start gap-3">
+                            <span class="text-tomato-500 mt-0.5">•</span>
+                            <span>ক্লিয়ার ব্র্যান্ড কালার বা ফন্ট নেই, সোশ্যাল মিডিয়া এলোমেলো দেখায়</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-tomato-500 mt-0.5">•</span>
+                            <span>বোরিং ক্যাপশন ও হুক — কাস্টমার পোস্ট স্ক্রোল করে চলে যায়</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-tomato-500 mt-0.5">•</span>
+                            <span>ওয়েবসাইট নেই, ইনবক্সে দাম জিজ্ঞেস করতে করতে কাস্টমার হতাশ হয়</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kajefly Solution -->
+                <div class="p-8 rounded-3xl bento-card border-chartreuse-electric/50 shadow-[0_0_30px_rgba(204,255,0,0.1)]">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-chartreuse-electric/20 text-chartreuse-electric flex items-center justify-center font-bold">✓</span>
+                        <h3 class="text-xl font-bold text-white">Kajefly সুপার-ব্র্যান্ড</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-lavender-200 font-bangla">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
+                            <span>মডার্ন ল্যাভেন্ডার ও হাই-কন্ট্রাস্ট কালার দিয়ে প্রিমিয়াম ব্র্যান্ড লুক</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
+                            <span>AI-ড্রিভেন আকর্ষণীয় বাংলা হুক ও ভাইরাল রিলস স্ক্রিপ্ট</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-4 h-4 text-chartreuse-electric mt-0.5 flex-shrink-0"></i>
+                            <span>ফ্রি ১-ক্লিক মোবাইল ওয়েবসাইট — কাস্টমার নিজেই অর্ডার প্লেস করে</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BENTO GRID SERVICES ============ -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-chartreuse-electric font-bold text-xs uppercase tracking-widest">Our Superpowers</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
+                    ৩টি শক্তিশালী সার্ভিস, <span class="text-tomato-500">১টি প্ল্যাটফর্মে</span>
+                </h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="luxury-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-charcoal-800 rounded-xl flex items-center justify-center text-signal-500 mb-6 silver-border">
-                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                <!-- Bento 1 -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lavender-800/80 border border-lavender-400/20 flex items-center justify-center text-chartreuse-electric mb-6">
+                            <i data-lucide="calendar" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">৩০ দিনের সোশ্যাল ম্যানেজমেন্ট</h3>
+                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
+                            প্রতিদিন কী পোস্ট করবেন তা নিয়ে ভাবার দিন শেষ। আমরা ৩০ দিনের পুরো ক্যালেন্ডার, বাংলা ক্যাপশন ও হ্যাশট্যাগ রেডি করে অটো-শিডিউল করে দেবো।
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">সোশ্যাল মিডিয়া ম্যানেজমেন্ট</h3>
-                    <p class="text-silver-400 text-sm font-bangla leading-relaxed mb-6">
-                        কন্টেন্ট ক্যালেন্ডার, ভাইরাল হুক, ক্যাপশন ও অটো-পোস্টিং দিয়ে আপনার পেজে নিয়মিত সক্রিয়তা বজায় রাখা।
-                    </p>
-                    <ul class="space-y-2.5 text-xs text-silver-300 font-bangla">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> মাসে ১৫-৩০টি পোস্ট</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> এনগেজিং ক্যাপশন ও হ্যাশট্যাগ</li>
-                    </ul>
+                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-chartreuse-electric">
+                        + অর্গানিক এনগেজমেন্ট বৃদ্ধি
+                    </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="luxury-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-charcoal-800 rounded-xl flex items-center justify-center text-signal-500 mb-6 silver-border">
-                        <i data-lucide="layout" class="w-6 h-6"></i>
+                <!-- Bento 2 -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between border-tomato-500/30">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-tomato-500/20 border border-tomato-500/30 flex items-center justify-center text-tomato-500 mb-6">
+                            <i data-lucide="globe" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">ফাস্ট-অর্ডার ল্যান্ডিং ওয়েবসাইট</h3>
+                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
+                            কাস্টমার ইনবক্সে এসে দাম না চেয়ে সরাসরি ওয়েবসাইটে গিয়ে ছবি ও সাইজ দেখে এক ক্লিকে বিকাশ অথবা ক্যাশ অন ডেলিভারিতে অর্ডার কনফার্ম করবে।
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">ওয়েবসাইট ও সেলস ফানেল</h3>
-                    <p class="text-silver-400 text-sm font-bangla leading-relaxed mb-6">
-                        ইনবক্সের ঝামেলা ছাড়া সরাসরি bKash / COD অর্ডারের জন্য সুপার-ফাস্ট আধুনিক ওয়েবসাইট।
-                    </p>
-                    <ul class="space-y-2.5 text-xs text-silver-300 font-bangla">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> মোবাইল-অপ্টিমাইজড UI</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> ফ্রি লাইফটাইম হোস্টিং সেটআপ</li>
-                    </ul>
+                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-tomato-500">
+                        + ড্রপ-অফ কমানো ও অটোমেটেড সেলস
+                    </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="luxury-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-charcoal-800 rounded-xl flex items-center justify-center text-signal-500 mb-6 silver-border">
-                        <i data-lucide="target" class="w-6 h-6"></i>
+                <!-- Bento 3 -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lavender-800/80 border border-lavender-400/20 flex items-center justify-center text-lavender-300 mb-6">
+                            <i data-lucide="video" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">ভাইরাল রিলস ও অ্যাড কপি</h3>
+                        <p class="text-lavender-300 font-bangla text-sm leading-relaxed mb-6">
+                            অ্যালগরিদমের ফেভারিট শর্ট-ফর্ম ভিডিও স্ক্রিপ্ট এবং ফেসবুক অ্যাডের জন্য হাই-কনভার্টিং কপিরাইটিং যাতে বিজ্ঞাপনের প্রতি টাকার সর্বোচ্চ রিটার্ন আসে।
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">মেটা অ্যাডস ও ট্র্যাকিং</h3>
-                    <p class="text-silver-400 text-sm font-bangla leading-relaxed mb-6">
-                        টার্গেটেড ফেসবুক ও ইনস্টাগ্রাম ক্যাম্পেইন যাতে প্রতি টাকায় সর্বোচ্চ বিক্রয় নিশ্চিত হয়।
-                    </p>
-                    <ul class="space-y-2.5 text-xs text-silver-300 font-bangla">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> হাই-কনভার্টিং অডিয়েন্স টার্গেটিং</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> সাপ্তাহিক রিটার্ন অন অ্যাড স্পেন্ড (ROAS) রিপোর্ট</li>
-                    </ul>
+                    <div class="pt-4 border-t border-lavender-200/10 text-xs font-bold text-chartreuse-electric">
+                        + কম খরচে বেশি মেসেজ ও সেলস
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============ PRICING ============ -->
-    <section id="pricing" class="py-24 relative">
+    <section id="pricing" class="py-24 bg-lavender-950/60 border-t border-lavender-200/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-signal-500 font-bold text-xs uppercase tracking-widest">Fair Pricing</span>
+                <span class="text-chartreuse-electric font-bold text-xs uppercase tracking-widest">Transparent Packages</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-4">
-                    স্বচ্ছ ও <span class="gradient-signal">সাশ্রয়ী প্ল্যান</span>
+                    সহজ ও <span class="gradient-lavender-chartreuse">সাশ্রয়ী প্যাকেজ</span>
                 </h2>
-                <p class="text-silver-400 font-bangla text-base">কোনো গোপন চার্জ নেই। যা প্রয়োজন, শুধু সেটুকুর জন্যই পে করুন।</p>
+                <p class="text-lavender-300 font-bangla text-base">এককালীন অথবা মাসিক—আপনার পছন্দমতো শুরু করুন।</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                <!-- Plan 1 -->
-                <div class="luxury-card p-8 rounded-3xl flex flex-col justify-between">
+            <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
+                <!-- Starter -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="text-sm font-bold text-silver-400 uppercase tracking-widest">Starter</div>
+                        <div class="text-xs font-bold text-lavender-400 uppercase tracking-widest">Starter Pack</div>
                         <div class="mt-4 flex items-baseline">
                             <span class="text-4xl font-black text-white">৳৫,০০০</span>
-                            <span class="text-silver-400 text-sm ml-2">/মাস</span>
+                            <span class="text-lavender-400 text-sm ml-2 font-bangla">/মাস</span>
                         </div>
-                        <p class="text-silver-400 text-xs font-bangla mt-3">নতুন পেইজ ও ছোট বিজনেসের জন্য আদর্শ।</p>
-                        <div class="my-6 border-t border-silver-200/10"></div>
-                        <ul class="space-y-3 text-sm text-silver-300 font-bangla">
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> মাসে ৮টি গ্রাফিক্স পোস্ট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> ক্যাপশন ও হ্যাশট্যাগ</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> অটোমেটেড শিডিউলিং</li>
-                            <li class="flex items-center gap-2.5 text-silver-600 line-through"><i data-lucide="x" class="w-4 h-4"></i> ওয়েবসাইট ডেভেলপমেন্ট</li>
+                        <div class="my-6 border-t border-lavender-200/10"></div>
+                        <ul class="space-y-3 text-sm text-lavender-300 font-bangla">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> মাসে ৮টি গ্রাফিক্স পোস্ট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কন্টেন্ট ক্যালেন্ডার ও ক্যাপশন</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> অটো-পোস্টিং শিডিউল</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-charcoal-800 hover:bg-charcoal-700 text-silver-200 silver-border transition">
-                        স্টার্টার নিন →
+                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-lavender-900 hover:bg-lavender-800 text-white border border-lavender-300/20 transition">
+                        স্টার্টার বুক করুন
                     </a>
                 </div>
 
-                <!-- Plan 2 (Highlighted) -->
-                <div class="luxury-card p-8 rounded-3xl flex flex-col justify-between border-signal-500/50 shadow-[0_0_30px_rgba(239,68,68,0.15)] relative">
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-signal-600 text-white text-[11px] font-black uppercase px-3 py-1 rounded-full tracking-wider">
-                        Most Popular 🔥
+                <!-- Growth (Best Seller) -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between border-chartreuse-electric relative shadow-[0_0_35px_rgba(204,255,0,0.15)]">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-chartreuse-electric text-lavender-950 text-[11px] font-black uppercase px-4 py-1 rounded-full tracking-wider">
+                        Best Value 🔥
                     </div>
                     <div>
-                        <div class="text-sm font-bold text-signal-400 uppercase tracking-widest">Growth Engine</div>
+                        <div class="text-xs font-bold text-chartreuse-electric uppercase tracking-widest">Growth Engine</div>
                         <div class="mt-4 flex items-baseline">
                             <span class="text-4xl font-black text-white">৳১০,০০০</span>
-                            <span class="text-silver-400 text-sm ml-2">/মাস</span>
+                            <span class="text-lavender-400 text-sm ml-2 font-bangla">/মাস</span>
                         </div>
-                        <p class="text-silver-400 text-xs font-bangla mt-3">দ্রুত বিক্রয় ও ব্র্যান্ড উপস্থিতি বাড়ানোর জন্য।</p>
-                        <div class="my-6 border-t border-silver-200/10"></div>
-                        <ul class="space-y-3 text-sm text-silver-200 font-bangla">
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> মাসে ১৫টি প্রিমিয়াম পোস্ট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> ২টি ভাইরাল রিলস স্ক্রিপ্ট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> ফুল রেসপন্সিভ ল্যান্ডিং ওয়েবসাইট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> মাসিক গ্রোথ রিপোর্ট ও অ্যানালাইসিস</li>
+                        <div class="my-6 border-t border-lavender-200/10"></div>
+                        <ul class="space-y-3 text-sm text-lavender-200 font-bangla">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> মাসে ১৫টি প্রিমিয়াম পোস্ট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ২টি ভাইরাল রিলস স্ক্রিপ্ট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ১টি রেডিমেড সেলস ওয়েবসাইট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কম্পিটিটর অডিট ও রিপোর্ট</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm signal-glow-btn text-white transition">
-                        গ্রোথ প্ল্যান শুরু করুন →
+                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm tomato-btn text-white transition">
+                        গ্রোথ প্যাক শুরু করুন →
                     </a>
                 </div>
 
-                <!-- Plan 3 -->
-                <div class="luxury-card p-8 rounded-3xl flex flex-col justify-between">
+                <!-- Web + Brand Bundle -->
+                <div class="bento-card p-8 rounded-3xl flex flex-col justify-between">
                     <div>
-                        <div class="text-sm font-bold text-silver-400 uppercase tracking-widest">Scale Pro</div>
+                        <div class="text-xs font-bold text-lavender-400 uppercase tracking-widest">Web + Brand Bundle</div>
                         <div class="mt-4 flex items-baseline">
-                            <span class="text-4xl font-black text-white">৳২০,০০০</span>
-                            <span class="text-silver-400 text-sm ml-2">/মাস</span>
+                            <span class="text-4xl font-black text-white">৳১২,৫০০</span>
+                            <span class="text-lavender-400 text-sm ml-2 font-bangla">এককালীন</span>
                         </div>
-                        <p class="text-silver-400 text-xs font-bangla mt-3">প্রতিষ্ঠিত ব্র্যান্ড ও হাই-ভলিউম সেলারদের জন্য।</p>
-                        <div class="my-6 border-t border-silver-200/10"></div>
-                        <ul class="space-y-3 text-sm text-silver-300 font-bangla">
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> আনলিমিটেড কন্টেন্ট সাপোর্ট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> কমপ্লিট মেটা অ্যাডস ম্যানেজমেন্ট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> কাস্টম ইকমার্স ওয়েবসাইট</li>
-                            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-signal-500"></i> ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার</li>
+                        <div class="my-6 border-t border-lavender-200/10"></div>
+                        <ul class="space-y-3 text-sm text-lavender-300 font-bangla">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> কমপ্লিট কাস্টম ওয়েবসাইট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ব্র্যান্ড লোগো ও সোশ্যাল কিট</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-chartreuse-electric"></i> ফ্রি হোস্টিং ও ডোমেন কানেকশন</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-charcoal-800 hover:bg-charcoal-700 text-silver-200 silver-border transition">
-                        কথা বলুন →
+                    <a href="#audit" class="mt-8 block text-center py-3.5 rounded-xl font-bold text-sm bg-lavender-900 hover:bg-lavender-800 text-white border border-lavender-300/20 transition">
+                        বান্ডেল সিলেক্ট করুন
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ CONTACT / AUDIT ============ -->
-    <section id="contact" class="py-24 bg-charcoal-900/40 border-t border-silver-200/5">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-signal-500 font-bold text-xs uppercase tracking-widest">Claim Free Value</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white mt-3 mb-6">
-                আপনার পেজের জন্য <span class="gradient-signal">ফ্রি অডিট রিপোর্ট নিন</span>
+    <!-- ============ FREE AUDIT SECTION ============ -->
+    <section id="audit" class="py-24 relative overflow-hidden">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full chartreuse-pill mb-4 text-xs font-bold uppercase">
+                Free Value Offer 🎁
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-black text-white mb-6">
+                আপনার পেজের জন্য <span class="text-tomato-500">ফ্রি অডিট নিন</span>
             </h2>
-            <p class="text-silver-400 font-bangla text-base mb-10 max-w-xl mx-auto">
-                আমাদের জানান আপনার পেজ বা বিজনেসের নাম। আমরা ২৪ ঘণ্টার মধ্যে একটি কাস্টম 'Before vs After' গ্রোথ রিপোর্ট পাঠিয়ে দেবো।
+            <p class="text-lavender-300 font-bangla text-base mb-10">
+                নিচে আপনার তথ্য দিন। আমরা আপনাদের ব্র্যান্ডের জন্য একটি কাস্টম 'Before vs After' ডেমো পোস্ট এবং পেজ অপ্টিমাইজেশন প্ল্যান তৈরি করে দেবো।
             </p>
 
-            <form class="luxury-card p-8 rounded-3xl text-left space-y-5 max-w-xl mx-auto">
+            <form class="bento-card p-8 rounded-3xl text-left space-y-5 border-lavender-300/30">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-silver-400 font-semibold mb-2">আপনার নাম</label>
-                    <input type="text" placeholder="যেমন: সৌরভ সিংহ" class="w-full bg-charcoal-950 border border-silver-200/10 rounded-xl px-4 py-3.5 text-white placeholder-silver-600 focus:outline-none focus:border-signal-500 text-sm">
+                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">আপনার নাম</label>
+                    <input type="text" placeholder="যেমন: সৌরভ সিংহ" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-silver-400 font-semibold mb-2">পেজ বা ব্র্যান্ড লিংক</label>
-                    <input type="text" placeholder="facebook.com/yourbrand" class="w-full bg-charcoal-950 border border-silver-200/10 rounded-xl px-4 py-3.5 text-white placeholder-silver-600 focus:outline-none focus:border-signal-500 text-sm">
+                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">Facebook / Instagram পেজ লিঙ্ক</label>
+                    <input type="text" placeholder="facebook.com/yourpage" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-silver-400 font-semibold mb-2">WhatsApp নম্বর</label>
-                    <input type="tel" placeholder="017XXXXXXXX" class="w-full bg-charcoal-950 border border-silver-200/10 rounded-xl px-4 py-3.5 text-white placeholder-silver-600 focus:outline-none focus:border-signal-500 text-sm">
+                    <label class="block text-xs uppercase tracking-wider text-lavender-300 font-semibold mb-2">WhatsApp নম্বর</label>
+                    <input type="tel" placeholder="01XXXXXXXXX" class="w-full bg-lavender-950/80 border border-lavender-300/20 rounded-xl px-4 py-3.5 text-white placeholder-lavender-500 focus:outline-none focus:border-chartreuse-electric text-sm">
                 </div>
-                <button type="submit" class="w-full signal-glow-btn text-white py-4 rounded-xl font-bold text-base transition">
-                    ফ্রি অডিট রিকোয়েস্ট পাঠান 🚀
+                <button type="submit" class="w-full tomato-btn text-white py-4 rounded-xl font-bold text-base transition">
+                    ফ্রি অডিট রিপোর্ট রিকোয়েস্ট করুন 🚀
                 </button>
             </form>
         </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
-    <footer class="py-12 bg-charcoal-950 border-t border-silver-200/5 text-silver-500 text-xs">
+    <footer class="py-12 bg-lavender-950 border-t border-lavender-200/10 text-xs text-lavender-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-signal-500"></span>
-                <span class="text-white font-bold">Kajefly</span> — ছোট ব্র্যান্ড, বড় উড়ান 🚀
+                <span class="w-2 h-2 rounded-full bg-chartreuse-electric"></span>
+                <span class="text-white font-bold">Kajefly</span> — ছোট ব্র্যান্ডের সুপার-গ্রোথ পার্টনার
             </div>
             <div>
-                © 2026 Kajefly Agency. Crafted with Charcoal, Moonlit Silver & Signal Red.
+                © 2026 Kajefly Agency • Palette: Lavender, Chartreuse & Tomato Red.
             </div>
         </div>
     </footer>

@@ -1,70 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
   <defs>
-    <!-- Dark Charcoal Background -->
-    <linearGradient id="bannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090a0c" />
-      <stop offset="60%" stop-color="#111317" />
-      <stop offset="100%" stop-color="#181b22" />
+    <!-- Background Gradient -->
+    <linearGradient id="bgBannerLav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0718" />
+      <stop offset="50%" stop-color="#1a0b2e" />
+      <stop offset="100%" stop-color="#120822" />
     </linearGradient>
 
-    <!-- Signal Red Linear Accent -->
-    <linearGradient id="signalRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ef4444" />
-      <stop offset="100%" stop-color="#f87171" />
+    <!-- Electric Chartreuse Gradient -->
+    <linearGradient id="chartreuseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ccff00" />
+      <stop offset="100%" stop-color="#a3e635" />
     </linearGradient>
 
-    <!-- Moonlit Silver Metallic -->
-    <linearGradient id="silverText" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#cbd5e1" />
+    <!-- Tomato Red Gradient -->
+    <linearGradient id="tomatoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6347" />
+      <stop offset="100%" stop-color="#e0482d" />
     </linearGradient>
 
-    <!-- Red Glow Filter -->
-    <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="25" flood-color="#ef4444" flood-opacity="0.35"/>
+    <!-- Glows -->
+    <filter id="cBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="24" flood-color="#ccff00" flood-opacity="0.3"/>
     </filter>
   </defs>
 
-  <!-- Deep Charcoal Canvas -->
-  <rect width="1200" height="630" fill="url(#bannerBg)" />
+  <!-- Deep Lavender Background -->
+  <rect width="1200" height="630" fill="url(#bgBannerLav)" />
 
   <!-- Ambient Light Orbs -->
-  <circle cx="1080" cy="120" r="300" fill="#ef4444" opacity="0.08" filter="url(#redGlow)" />
-  <circle cx="150" cy="550" r="240" fill="#e2e8f0" opacity="0.04" />
-  
-  <!-- Subtle Silver Grid Accent Line -->
-  <line x1="80" y1="80" x2="1120" y2="80" stroke="rgba(226, 232, 240, 0.08)" stroke-width="1" />
-  <line x1="80" y1="550" x2="1120" y2="550" stroke="rgba(226, 232, 240, 0.08)" stroke-width="1" />
+  <circle cx="1100" cy="120" r="280" fill="#ccff00" opacity="0.08" filter="url(#cBloom)" />
+  <circle cx="150" cy="550" r="240" fill="#ff6347" opacity="0.07" />
+  <circle cx="650" cy="300" r="350" fill="#a855f7" opacity="0.06" />
 
-  <!-- Brand Symbol -->
+  <!-- Grid Borders -->
+  <line x1="80" y1="80" x2="1120" y2="80" stroke="rgba(216, 180, 254, 0.12)" stroke-width="1" />
+  <line x1="80" y1="550" x2="1120" y2="550" stroke="rgba(216, 180, 254, 0.12)" stroke-width="1" />
+
+  <!-- Brand Mark -->
   <g transform="translate(100, 130)">
-    <rect width="84" height="84" rx="22" fill="#181b22" stroke="rgba(226, 232, 240, 0.2)" stroke-width="1.5" />
-    <text x="42" y="58" font-family="'Inter', sans-serif" font-size="46" font-weight="900" fill="#ef4444" text-anchor="middle">K</text>
+    <rect width="84" height="84" rx="22" fill="#1a0b2e" stroke="rgba(216, 180, 254, 0.3)" stroke-width="2" />
+    <text x="42" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="46" font-weight="900" fill="#ccff00" text-anchor="middle">K</text>
   </g>
 
-  <!-- Brand Typography -->
-  <text x="210" y="185" font-family="'Inter', sans-serif" font-size="52" font-weight="900" fill="url(#silverText)" letter-spacing="1">Kajefly</text>
-  <text x="405" y="185" font-family="'Hind Siliguri', sans-serif" font-size="28" font-weight="600" fill="#94a3b8">(কাজেফ্লাই)</text>
+  <!-- Title -->
+  <text x="210" y="185" font-family="'Plus Jakarta Sans', sans-serif" font-size="52" font-weight="900" fill="#f3e8ff" letter-spacing="0.5">Kajefly</text>
+  <text x="405" y="185" font-family="'Hind Siliguri', sans-serif" font-size="28" font-weight="600" fill="#d8b4fe">(কাজেফ্লাই)</text>
 
-  <!-- Red Accent Tag -->
-  <rect x="100" y="245" width="260" height="34" rx="17" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="1" />
-  <text x="230" y="268" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#f87171" text-anchor="middle" letter-spacing="1.5">AI GROWTH MICRO-AGENCY</text>
+  <!-- Tag Pill -->
+  <rect x="100" y="245" width="280" height="34" rx="17" fill="rgba(204, 255, 0, 0.12)" stroke="#ccff00" stroke-width="1" />
+  <text x="240" y="268" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#ccff00" text-anchor="middle" letter-spacing="1.5">AI GROWTH MICRO-AGENCY</text>
 
   <!-- Main Headline in Bangla -->
   <text x="100" y="360" font-family="'Hind Siliguri', sans-serif" font-size="54" font-weight="800" fill="#ffffff">
-    ছোট ব্র্যান্ড, <tspan fill="url(#signalRedGrad)">বড় উড়ান! 🚀</tspan>
+    ছোট ব্র্যান্ডের <tspan fill="url(#chartreuseGrad)">সুপার-গ্রোথ পার্টনার! 🚀</tspan>
   </text>
 
-  <!-- Subtitle in Moonlit Silver -->
-  <text x="100" y="420" font-family="'Hind Siliguri', sans-serif" font-size="24" font-weight="400" fill="#cbd5e1">
-    সোশ্যাল মিডিয়া ম্যানেজমেন্ট • প্রিমিয়াম কন্টেন্ট • ফাস্ট ওয়েবসাইট সল্যুশন
+  <!-- Subtitle -->
+  <text x="100" y="420" font-family="'Hind Siliguri', sans-serif" font-size="24" font-weight="400" fill="#e9d5ff">
+    সোশ্যাল মিডিয়া ম্যানেজমেন্ট • ভাইরাল রিলস • ১-ক্লিক অর্ডার ওয়েবসাইট
   </text>
 
-  <!-- Footer Info / CTA -->
-  <text x="100" y="520" font-family="'Inter', sans-serif" font-size="20" font-weight="600" fill="#94a3b8">
+  <!-- Footer Link & CTA -->
+  <text x="100" y="520" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="600" fill="#d8b4fe">
     🌐 shouravsingha.github.io/kajefly
   </text>
-  <text x="820" y="520" font-family="'Hind Siliguri', sans-serif" font-size="22" font-weight="700" fill="#ef4444">
-    🔥 ফ্রি অডিটের জন্য ইনবক্স করুন
+  <text x="800" y="520" font-family="'Hind Siliguri', sans-serif" font-size="22" font-weight="700" fill="#ff6347">
+    🎁 ফ্রি পেজ অডিটের জন্য ইনবক্স করুন
   </text>
 </svg>
