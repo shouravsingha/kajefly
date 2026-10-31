@@ -1,0 +1,278 @@
+//@version=5
+indicator("ICT Algorithmic Multi-Timeframe Execution System [Kajefly]", shorttitle="ICT_Algo_MTF", overlay=true, max_boxes_count=500, max_lines_count=500, max_labels_count=500)
+
+// ==========================================================================================
+// 1. INPUT PARAMETERS & CONFIGURATION
+// ==========================================================================================
+
+grp_htf      = "=== Multi-Timeframe (HTF) Framework ==="
+htf_tf       = input.timeframe("60", "Higher Timeframe (HTF) for Bias & POIs", group=grp_htf)
+show_pdh_pdl = input.bool(true, "Show Previous Day High/Low (PDH/PDL)", group=grp_htf)
+show_pwh_pwl = input.bool(true, "Show Previous Week High/Low (PWH/PWL)", group=grp_htf)
+show_htf_eq  = input.bool(true, "Show 50% Dealing Range Equilibrium", group=grp_htf)
+
+grp_time     = "=== New York Time & Killzones (America/New_York) ==="
+use_time_flt = input.bool(true, "Filter Execution by Killzones & Silver Bullet", group=grp_time)
+show_sessions= input.bool(true, "Highlight Killzone Backgrounds", group=grp_time)
+asian_sess   = input.string("1900-2200", "Asian Killzone (EST)", group=grp_time)
+london_sess  = input.string("0200-0500", "London Open Killzone (EST)", group=grp_time)
+ny_am_sess   = input.string("0700-1000", "NY AM Killzone (EST)", group=grp_time)
+sb_london    = input.string("0300-0400", "London Silver Bullet (EST)", group=grp_time)
+sb_ny_am     = input.string("1000-1100", "NY AM Silver Bullet (EST)", group=grp_time)
+sb_ny_pm     = input.string("1400-1500", "NY PM Silver Bullet (EST)", group=grp_time)
+
+grp_pd_array = "=== PD Arrays: FVGs, Order Blocks & Swings ==="
+show_fvg     = input.bool(true, "Show Fair Value Gaps (BISI / SIBI)", group=grp_pd_array)
+show_ce      = input.bool(true, "Draw 50% Consequent Encroachment (CE)", group=grp_pd_array)
+fvg_min_mult = input.float(0.15, "Min FVG Width (ATR Multiplier)", minval=0.0, step=0.05, group=grp_pd_array)
+show_ob      = input.bool(true, "Show Order Blocks (+OB / -OB)", group=grp_pd_array)
+show_swings  = input.bool(true, "Show Liquidity Pools (BSL / SSL)", group=grp_pd_array)
+swing_len    = input.int(3, "Swing Pivot Lookback Length", minval=1, maxval=10, group=grp_pd_array)
+
+grp_signals  = "=== 1M / 5M Execution Signals (ICT 2022 Model) ==="
+enable_sig   = input.bool(true, "Enable Buy / Sell Entry Signals", group=grp_signals)
+disp_atr_mul = input.float(1.2, "Displacement Min Candle Body (ATR Mult)", minval=0.5, step=0.1, group=grp_signals)
+min_body_rat = input.float(0.60, "Displacement Min Body-to-Range Ratio", minval=0.4, maxval=0.9, step=0.05, group=grp_signals)
+target_rr    = input.float(2.0, "Minimum Target Risk-to-Reward (R:R)", minval=1.0, step=0.5, group=grp_signals)
+
+// Colors Palette: Modern Lavender, Electric Chartreuse, and Tomato Red
+c_bull_pri   = #b6ff00       // Electric Chartreuse
+c_bull_box   = color.new(#b6ff00, 82)
+c_bear_pri   = #ff4d36       // Tomato Red
+c_bear_box   = color.new(#ff4d36, 82)
+c_lav_pri    = #cbaff5       // Royal Lavender
+c_lav_line   = color.new(#cbaff5, 40)
+c_neutral_eq = color.new(#e1d5f9, 50)
+
+// ==========================================================================================
+// 2. TIME ENGINE & SESSION TRACKING (New York EST/EDT)
+// ==========================================================================================
+
+is_in_sess(sess_str) =>
+    not na(time(timeframe.period, sess_str + ":1234567", "America/New_York"))
+
+in_asian   = is_in_sess(asian_sess)
+in_london  = is_in_sess(london_sess)
+in_ny_am   = is_in_sess(ny_am_sess)
+in_sb_ldn  = is_in_sess(sb_london)
+in_sb_nyam = is_in_sess(sb_ny_am)
+in_sb_nypm = is_in_sess(sb_ny_pm)
+
+in_killzone = in_london or in_ny_am or in_sb_ldn or in_sb_nyam or in_sb_nypm
+
+// Background Highlights
+bgcolor(show_sessions and in_london ? color.new(#3b82f6, 92) : na, title="London Killzone Tint")
+bgcolor(show_sessions and in_ny_am  ? color.new(#ff4d36, 92) : na, title="NY AM Killzone Tint")
+bgcolor(show_sessions and (in_sb_ldn or in_sb_nyam or in_sb_nypm) ? color.new(#b6ff00, 90) : na, title="Silver Bullet Tint")
+
+// ==========================================================================================
+// 3. HIGHER TIMEFRAME (HTF) DATA & LIQUIDITY LEVELS (Non-Repainting)
+// ==========================================================================================
+
+// Daily High/Low & Weekly High/Low via confirmed bars (lookahead_off)
+[pdh, pdl] = request.security(syminfo.tickerid, "D", [high[1], low[1]], lookahead=barmerge.lookahead_off)
+[pwh, pwl] = request.security(syminfo.tickerid, "W", [high[1], low[1]], lookahead=barmerge.lookahead_off)
+
+var line line_pdh = na
+var line line_pdl = na
+var line line_pwh = na
+var line line_pwl = na
+
+if barstate.islast and show_pdh_pdl
+    line.delete(line_pdh)
+    line.delete(line_pdl)
+    line_pdh := line.new(bar_index - 30, pdh, bar_index + 10, pdh, color=c_bear_pri, width=1, style=line.style_dashed)
+    line_pdl := line.new(bar_index - 30, pdl, bar_index + 10, pdl, color=c_bull_pri, width=1, style=line.style_dashed)
+    label.new(bar_index + 10, pdh, "PDH (BSL)", textcolor=c_bear_pri, style=label.style_none, size=size.small)
+    label.new(bar_index + 10, pdl, "PDL (SSL)", textcolor=c_bull_pri, style=label.style_none, size=size.small)
+
+if barstate.islast and show_pwh_pwl
+    line.delete(line_pwh)
+    line.delete(line_pwl)
+    line_pwh := line.new(bar_index - 60, pwh, bar_index + 10, pwh, color=color.new(#ff775e, 30), width=2, style=line.style_solid)
+    line_pwl := line.new(bar_index - 60, pwl, bar_index + 10, pwl, color=color.new(#a3e635, 30), width=2, style=line.style_solid)
+    label.new(bar_index + 10, pwh, "PWH", textcolor=color.new(#ff775e, 20), style=label.style_none, size=size.small)
+    label.new(bar_index + 10, pwl, "PWL", textcolor=color.new(#a3e635, 20), style=label.style_none, size=size.small)
+
+// Dealing Range Equilibrium (Rolling 20-period swing high/low)
+var float htf_high = na
+var float htf_low  = na
+var float htf_eq   = na
+htf_high := ta.highest(high, 50)
+htf_low  := ta.lowest(low, 50)
+htf_eq   := (htf_high + htf_low) / 2.0
+
+var line line_eq = na
+if barstate.islast and show_htf_eq
+    line.delete(line_eq)
+    line_eq := line.new(bar_index - 40, htf_eq, bar_index + 10, htf_eq, color=c_neutral_eq, width=1, style=line.style_dotted)
+    label.new(bar_index + 10, htf_eq, "50% EQ (Dealing Range)", textcolor=c_lav_pri, style=label.style_none, size=size.tiny)
+
+// ==========================================================================================
+// 4. PRICE DELIVERY ARRAYS: SWINGS, FVGS & ORDER BLOCKS
+// ==========================================================================================
+
+atr14 = ta.atr(14)
+body_size = math.abs(close - open)
+candle_range = math.max(high - low, syminfo.mintick)
+body_ratio = body_size / candle_range
+
+// A. Swing Points (BSL & SSL Pools)
+ph = ta.pivothigh(high, swing_len, swing_len)
+pl = ta.pivotlow(low, swing_len, swing_len)
+
+var float last_bsl = na
+var float last_ssl = na
+
+if not na(ph)
+    last_bsl := ph
+    if show_swings
+        line.new(bar_index - swing_len, ph, bar_index, ph, color=color.new(c_bear_pri, 50), width=1, style=line.style_dotted)
+        label.new(bar_index - swing_len, ph, "BSL", textcolor=c_bear_pri, style=label.style_none, size=size.tiny)
+
+if not na(pl)
+    last_ssl := pl
+    if show_swings
+        line.new(bar_index - swing_len, pl, bar_index, pl, color=color.new(c_bull_pri, 50), width=1, style=line.style_dotted)
+        label.new(bar_index - swing_len, pl, "SSL", textcolor=c_bull_pri, style=label.style_none, size=size.tiny)
+
+// B. Fair Value Gaps (BISI & SIBI) with Consequent Encroachment (50% CE)
+// Bullish BISI: Low[0] > High[2] and Close[1] > Open[1]
+is_bisi = (low > high[2]) and (close[1] > open[1]) and ((low - high[2]) >= fvg_min_mult * atr14)
+// Bearish SIBI: High[0] < Low[2] and Close[1] < Open[1]
+is_sibi = (high < low[2]) and (close[1] < open[1]) and ((low[2] - high) >= fvg_min_mult * atr14)
+
+var box[] bisi_boxes = array.new_box()
+var box[] sibi_boxes = array.new_box()
+
+if is_bisi and show_fvg
+    bisi_top = low
+    bisi_bot = high[2]
+    ce_lvl   = (bisi_top + bisi_bot) / 2.0
+    bx = box.new(bar_index - 2, bisi_top, bar_index + 6, bisi_bot, border_color=color.new(c_bull_pri, 60), bgcolor=c_bull_box)
+    array.push(bisi_boxes, bx)
+    if show_ce
+        line.new(bar_index - 2, ce_lvl, bar_index + 6, ce_lvl, color=color.new(c_bull_pri, 40), width=1, style=line.style_dotted)
+
+if is_sibi and show_fvg
+    sibi_top = low[2]
+    sibi_bot = high
+    ce_lvl   = (sibi_top + sibi_bot) / 2.0
+    bx = box.new(bar_index - 2, sibi_top, bar_index + 6, sibi_bot, border_color=color.new(c_bear_pri, 60), bgcolor=c_bear_box)
+    array.push(sibi_boxes, bx)
+    if show_ce
+        line.new(bar_index - 2, ce_lvl, bar_index + 6, ce_lvl, color=color.new(c_bear_pri, 40), width=1, style=line.style_dotted)
+
+// Manage array sizes
+if array.size(bisi_boxes) > 40
+    box.delete(array.shift(bisi_boxes))
+if array.size(sibi_boxes) > 40
+    box.delete(array.shift(sibi_boxes))
+
+// C. Order Blocks (+OB & -OB)
+// Bullish OB: Last down-close candle prior to upward displacement breaking a short-term high
+is_disp_bull = (close > open) and (body_size >= disp_atr_mul * atr14) and (body_ratio >= min_body_rat)
+is_disp_bear = (close < open) and (body_size >= disp_atr_mul * atr14) and (body_ratio >= min_body_rat)
+
+var box[] ob_boxes = array.new_box()
+
+if is_disp_bull and show_ob and close[1] < open[1]
+    ob_top = high[1]
+    ob_bot = low[1]
+    bx = box.new(bar_index - 1, ob_top, bar_index + 10, ob_bot, border_color=color.new(c_bull_pri, 40), bgcolor=color.new(c_bull_pri, 88))
+    array.push(ob_boxes, bx)
+
+if is_disp_bear and show_ob and close[1] > open[1]
+    ob_top = high[1]
+    ob_bot = low[1]
+    bx = box.new(bar_index - 1, ob_top, bar_index + 10, ob_bot, border_color=color.new(c_bear_pri, 40), bgcolor=color.new(c_bear_pri, 88))
+    array.push(ob_boxes, bx)
+
+if array.size(ob_boxes) > 30
+    box.delete(array.shift(ob_boxes))
+
+// ==========================================================================================
+// 5. ICT 2022 / SILVER BULLET EXECUTION SIGNAL ENGINE (1M & 5M)
+// ==========================================================================================
+
+// State tracking variables
+var bool swept_ssl = false
+var bool swept_bsl = false
+var float raid_low = na
+var float raid_high = na
+var int raid_bar = na
+var float cisd_ref_open = na
+
+// 1. Check Liquidity Sweeps
+if not na(last_ssl) and low < last_ssl and not swept_ssl
+    swept_ssl := true
+    swept_bsl := false
+    raid_low := low
+    raid_bar := bar_index
+    // Capture initiator down-close open for CISD
+    cisd_ref_open := open[1] < close[1] ? open[1] : open
+
+if not na(last_bsl) and high > last_bsl and not swept_bsl
+    swept_bsl := true
+    swept_ssl := false
+    raid_high := high
+    raid_bar := bar_index
+    // Capture initiator up-close open for CISD
+    cisd_ref_open := open[1] > close[1] ? open[1] : open
+
+// 2. Change In State of Delivery (CISD) & Market Structure Shift (MSS) Confirmation
+bullish_cisd = swept_ssl and not na(cisd_ref_open) and close > cisd_ref_open
+bearish_cisd = swept_bsl and not na(cisd_ref_open) and close < cisd_ref_open
+
+// 3. Signal Trigger Conditions:
+// Bullish Signal:
+// - Swept SSL recently (within last 15 bars)
+// - Confirmed CISD & prints a fresh BISI FVG
+// - Candle close is in Discount (close < htf_eq or inside lower half of displacement)
+// - Within active session (if time filter is enabled)
+time_ok = not use_time_flt or in_killzone
+
+buy_signal = enable_sig and time_ok and swept_ssl and (bar_index - raid_bar <= 15) and bullish_cisd and is_bisi and (close <= htf_eq)
+
+// Bearish Signal:
+// - Swept BSL recently (within last 15 bars)
+// - Confirmed CISD & prints a fresh SIBI FVG
+// - Candle close is in Premium (close > htf_eq)
+// - Within active session
+sell_signal = enable_sig and time_ok and swept_bsl and (bar_index - raid_bar <= 15) and bearish_cisd and is_sibi and (close >= htf_eq)
+
+// Execute visual signals & calculate trade parameters
+if buy_signal
+    entry_p = low // Entry at proximal edge of FVG
+    sl_p    = raid_low - (0.5 * atr14)
+    risk_d  = math.abs(entry_p - sl_p)
+    tp1_p   = entry_p + (risk_d * target_rr)
+    tp2_p   = not na(last_bsl) and last_bsl > entry_p ? last_bsl : entry_p + (risk_d * 3.0)
+
+    label.new(bar_index, low - atr14, 
+              "🟢 ICT BUY ENTRY\nEntry: " + str.tostring(entry_p, "#.##") + 
+              "\nSL: " + str.tostring(sl_p, "#.##") + 
+              "\nTP1 (1:" + str.tostring(target_rr, "#.#") + "): " + str.tostring(tp1_p, "#.##") + 
+              "\nTP2 (BSL): " + str.tostring(tp2_p, "#.##"), 
+              color=#12052c, textcolor=c_bull_pri, style=label.style_label_up, size=size.small)
+    // Reset sweep flag to prevent duplicate signals
+    swept_ssl := false
+
+if sell_signal
+    entry_p = high // Entry at proximal edge of SIBI
+    sl_p    = raid_high + (0.5 * atr14)
+    risk_d  = math.abs(sl_p - entry_p)
+    tp1_p   = entry_p - (risk_d * target_rr)
+    tp2_p   = not na(last_ssl) and last_ssl < entry_p ? last_ssl : entry_p - (risk_d * 3.0)
+
+    label.new(bar_index, high + atr14, 
+              "🔴 ICT SELL ENTRY\nEntry: " + str.tostring(entry_p, "#.##") + 
+              "\nSL: " + str.tostring(sl_p, "#.##") + 
+              "\nTP1 (1:" + str.tostring(target_rr, "#.#") + "): " + str.tostring(tp1_p, "#.##") + 
+              "\nTP2 (SSL): " + str.tostring(tp2_p, "#.##"), 
+              color=#12052c, textcolor=c_bear_pri, style=label.style_label_down, size=size.small)
+    swept_bsl := false
+
+// Alerts for automated execution or push notifications
+alertcondition(buy_signal, title="ICT Bullish Entry Alert", message="ICT BUY Signal Triggered on {{ticker}}! Entry at FVG with SL below raid low.")
+alertcondition(sell_signal, title="ICT Bearish Entry Alert", message="ICT SELL Signal Triggered on {{ticker}}! Entry at FVG with SL above raid high.")
